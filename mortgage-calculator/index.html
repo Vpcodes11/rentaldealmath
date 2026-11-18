@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en-US"><head>
+<!-- Google Analytics 4 with Consent Mode v2 -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'],wait_for_update:500});
+gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});
+try{var c=localStorage.getItem('ff_consent');if(c){var g=c==='yes'?'granted':'denied';gtag('consent','update',{ad_storage:g,ad_user_data:g,ad_personalization:g,analytics_storage:g});}}catch(e){}
+gtag('js',new Date());gtag('config','G-Y093FX732P');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y093FX732P"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8544265950892925" crossorigin="anonymous"></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Mortgage Calculator with Taxes, PMI &amp; HOA | RentalDealMath</title><meta name="description" content="Estimate your monthly mortgage payment with taxes, insurance, PMI and HOA. See your payoff date and how extra payments reduce interest.">
+<link rel="canonical" href="https://rentaldealmath.com/mortgage-calculator/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:site_name" content="RentalDealMath"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Mortgage Calculator with Taxes, PMI &amp; HOA | RentalDealMath"><meta property="og:description" content="Estimate your monthly mortgage payment with taxes, insurance, PMI and HOA. See your payoff date and how extra payments reduce interest."><meta property="og:url" content="https://rentaldealmath.com/mortgage-calculator/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&amp;family=Figtree:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&amp;family=Figtree:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap"></noscript>
+<style>:root{--bg:#f4f5f2;--surface:#ffffff;--ink:#16201d;--muted:#5d6b66;--line:#dde2dd;--accent:#0d6b5c;--accent-soft:#e2f0ec;--display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Figtree","Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme: dark){:root{--bg:#0f1513;--surface:#17201d;--ink:#e6ece9;--muted:#97a6a0;--line:#2a3632;--accent:#4cc3a7;--accent-soft:#163029}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.55 var(--body)}
+a{color:var(--accent);text-underline-offset:.17em}
+.in{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+.site-header,.site-footer{background:var(--surface)}
+.site-header{border-bottom:1px solid var(--line)}
+.site-header .in{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-block:15px}
+.brand{display:inline-flex;align-items:center;gap:9px;font:600 1.2rem var(--display);color:var(--ink);text-decoration:none}
+.brand svg{width:32px;height:32px}.brand b{color:var(--accent)}
+.site-nav,.site-footer nav{display:flex;flex-wrap:wrap;gap:8px 16px}
+.site-nav a{color:var(--muted);font-size:.94rem;text-decoration:none;font-weight:600}
+.site-nav a:hover,.site-nav a[aria-current]{color:var(--accent);text-decoration:underline}
+h1,h2,h3{font-family:var(--display);line-height:1.2;margin:0}
+h1{font-size:clamp(2.25rem,5vw,3.7rem);letter-spacing:-.035em}
+h2{font-size:1.42rem}h3{font-size:1.16rem}
+p{margin:.65em 0 0}
+.intro{padding-block:clamp(26px,5vw,52px)}
+.intro>p:last-child{font-size:1.13rem;color:var(--muted)}
+.eyebrow{margin:0 0 8px;color:var(--accent);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.11em}
+.layout,.fields{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.layout{align-items:start}
+.layout>*,.fields>*,fieldset{min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(15px,3vw,28px);overflow-wrap:anywhere}
+.muted{color:var(--muted);font-size:.94rem}
+.fields{margin-top:18px;gap:13px}
+.field{display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
+label{font-weight:600;font-size:.93rem;line-height:1.3}
+input,select{min-width:0;width:100%;height:44px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:500 1rem var(--mono);padding:7px 9px}
+[aria-invalid="true"]{border-color:var(--accent);outline:1px dashed var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px}
+button{border:1px solid var(--accent);background:var(--accent);color:var(--surface);border-radius:8px;padding:10px 14px;min-height:44px;font:600 1rem var(--body);cursor:pointer}
+.secondary{color:var(--accent);background:var(--surface);border-color:var(--line)}
+.hero-result{background:var(--accent-soft);border-radius:10px;margin:14px 0;padding:14px}
+.hero-result strong{display:block;color:var(--accent);font:500 clamp(1.6rem,4.3vw,2.65rem)/1.2 var(--mono);margin-block:4px}
+.metrics{margin:0}
+.metrics>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;padding:8px 0;border-bottom:1px solid var(--line)}
+dd{margin:0;text-align:right;font:500 .92rem/1.55 var(--mono)}
+.verdict{margin-top:14px;background:var(--accent-soft);border-radius:8px;padding:10px 12px}
+.bar{display:flex;height:10px;border-radius:99px;overflow:hidden;background:var(--line);margin:16px 0 5px}
+.swatch{display:inline-block;width:.63em;height:.63em;margin-right:6px;border-radius:2px}
+.schedule,.guide{margin-block:18px}
+canvas{display:block;width:100%;height:210px;margin:10px 0 22px}
+details{border-bottom:1px solid var(--line);padding:6px 0}
+summary{cursor:pointer;padding:9px 3px;min-height:42px;font-weight:600}
+.year-total{color:var(--muted);font:500 .84rem var(--mono);margin-left:8px}
+table{width:100%;table-layout:fixed;border-collapse:collapse;font:500 .79rem/1.4 var(--mono)}
+caption{text-align:left;margin:6px 0;color:var(--muted)}
+th,td{text-align:right;border-bottom:1px solid var(--line);padding:6px 2px;overflow-wrap:anywhere}
+th:first-child{text-align:left}
+.guide{padding-bottom:28px}
+.guide p{max-width:75ch}
+.guide h2:not(:first-child){margin-top:24px}
+.guide h3{margin-top:17px}
+.ad-slot{display:none}
+.site-footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:.94rem}
+@media(max-width:760px){.layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:400px){.fields{grid-template-columns:minmax(0,1fr)}}
+
+/* Mobile polish (Nov 2026) */
+@media (max-width:640px){
+  .site-nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:20px;white-space:nowrap;mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .site-nav::-webkit-scrollbar{display:none}
+  .site-nav a{display:inline-block;padding:10px 0}
+  input,select,textarea{font-size:16px!important}
+  button,select,input[type=submit],input[type=button],.btn,a.btn{min-height:44px}
+  input[type=checkbox],input[type=radio]{min-width:22px;min-height:22px}
+  table{max-width:100%}
+  img,canvas,video,svg{max-width:100%}
+  body{-webkit-text-size-adjust:100%;overflow-wrap:break-word}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Mortgage Calculator","url":"https://rentaldealmath.com/mortgage-calculator/","description":"Estimate your monthly mortgage payment with taxes, insurance, PMI and HOA. See your payoff date and how extra payments reduce interest.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":0,"priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the monthly mortgage payment include taxes and insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes. The starting estimate includes principal, interest, one month of property tax and insurance, HOA dues, applicable PMI, and any extra principal you entered."}},{"@type":"Question","name":"What PMI rate does the calculator assume?","acceptedAnswer":{"@type":"Answer","text":"It estimates annual PMI at 0.5% of the original loan amount when you put less than 20% down. A lender quote can vary. Enter the quoted monthly premium to override the estimate."}},{"@type":"Question","name":"When does PMI drop out of the estimate?","acceptedAnswer":{"@type":"Answer","text":"The model removes PMI from the next payment once the modeled balance reaches 78% of the original home price. For covered loans, actual automatic termination generally follows the original schedule and depends on being current."}},{"@type":"Question","name":"Can I compare a 15-year and 30-year mortgage?","acceptedAnswer":{"@type":"Answer","text":"Yes. Keep the price and down payment fixed and change the term. Use the quoted rate for each term, then compare the starting payment and total interest."}},{"@type":"Question","name":"How do I read the amortization table?","acceptedAnswer":{"@type":"Answer","text":"Each year shows its ending balance. Expand a year to see the date, payment, principal, interest, and remaining balance for each month. Payment figures in the table cover the loan itself."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rentaldealmath.com/"},{"@type":"ListItem","position":2,"name":"Mortgage Calculator","item":"https://rentaldealmath.com/mortgage-calculator/"}]}]}</script></head><body>
+<header class="site-header"><div class="in"><a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M7 15.5 16 8l9 7.5" fill="none" stroke="var(--surface)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 19h10M11 23.5h10" stroke="var(--surface)" stroke-width="2.4" stroke-linecap="round"/></svg><span>RentalDeal<b>Math</b></span></a><nav class="site-nav" aria-label="Main"><a href="/rental-property-calculator/">Rental Property</a><a href="/mortgage-calculator/" aria-current="page">Mortgage</a><a href="/cap-rate-calculator/">Cap Rate</a><a href="/brrrr-calculator/">BRRRR</a><a href="/rental-vs-airbnb-calculator/">Airbnb vs Rent</a><a href="/rent-vs-buy-calculator/">Rent vs Buy</a><a href="/rent-ledger-template/">Rent Ledger</a><a href="/about/">About</a></nav></div></header>
+<main class="in">
+<div class="intro"><p class="eyebrow">Free real estate calculator</p><h1>Mortgage Calculator</h1><p>Estimate your starting monthly housing payment and see how extra principal changes your payoff date.</p></div>
+<noscript><p class="card">Enable JavaScript to calculate results.</p></noscript>
+<div class="layout">
+<form id="inputs" class="card" aria-labelledby="input-title"><h2 id="input-title">Inputs</h2><p id="assumptions" class="muted">The automatic PMI estimate uses 0.5% of the original loan amount per year when the down payment is below 20%. Enter a monthly quote to override it, or clear the field to restore Auto.</p><div class="fields"><div class="field"><label for="price">Home price ($)</label><input id="price" type="text" inputmode="decimal" maxlength="24" value="400,000"></div>
+<div class="field"><label for="down">Down payment ($)</label><input id="down" type="text" inputmode="decimal" maxlength="24" value="60,000"></div>
+<div class="field"><label for="downPct">Down payment (%)</label><input id="downPct" type="text" inputmode="decimal" maxlength="24" value="15"></div>
+<div class="field"><label for="rate">Interest rate (%)</label><input id="rate" type="text" inputmode="decimal" maxlength="24" value="6.5"></div>
+<div class="field"><label for="term">Loan term (years)</label><select id="term"><option>15</option><option>20</option><option selected>30</option></select></div>
+<div class="field"><label for="tax">Annual property tax ($)</label><input id="tax" type="text" inputmode="decimal" maxlength="24" value="4,800"></div>
+<div class="field"><label for="taxPct">Property tax rate (%)</label><input id="taxPct" type="text" inputmode="decimal" maxlength="24" value="1.2"></div>
+<div class="field"><label for="insurance">Annual home insurance ($)</label><input id="insurance" type="text" inputmode="decimal" maxlength="24" value="1,800"></div>
+<div class="field"><label for="pmi">Monthly PMI ($)</label><input id="pmi" type="text" inputmode="decimal" maxlength="24" value="" placeholder="Auto" aria-describedby="assumptions"></div>
+<div class="field"><label for="hoa">Monthly HOA dues ($)</label><input id="hoa" type="text" inputmode="decimal" maxlength="24" value="50"></div>
+<div class="field"><label for="start">First payment month</label><input id="start" type="month" min="1900-01" max="9999-12" value="2027-01"></div>
+<div class="field"><label for="extra">Extra principal per month ($)</label><input id="extra" type="text" inputmode="decimal" maxlength="24" value="0"></div></div><div class="actions"><button type="reset" class="secondary">Reset</button></div></form>
+<section class="card" aria-labelledby="results-title"><h2 id="results-title">Estimated results</h2><div id="results"></div><div class="actions"><button type="button" id="copy">Copy results</button><span id="status" role="status"></span></div><div class="ad-slot" data-slot="top"></div></section>
+</div>
+<section class="card schedule"><h2>Balance over time</h2><canvas id="chart" role="img" aria-label="Loan balance over time. The same figures are in the amortization schedule."></canvas><h2>Amortization schedule</h2><p class="muted">Expand a loan year to see each monthly payment. The schedule covers principal and interest, including extra principal.</p><div id="schedule"></div></section>
+<article class="card guide">
+<h2>How to estimate your monthly mortgage payment</h2>
+<p>Start with the price you expect to pay and the cash you plan to put down. Enter the down payment in dollars or as a percentage. The calculator updates the other field as you type. When you change the price, it keeps the last down payment unit you edited. Property tax works the same way. If you know the annual bill, use dollars. If you have an estimate based on the purchase price, use the percentage field.</p>
+<p>Use the interest rate from your loan quote and choose a 15-, 20-, or 30-year term. Set the first payment month to the month your first installment is due. That date can differ from your closing month. Enter your annual homeowners insurance premium and monthly HOA dues separately. If your lender gives you a monthly PMI quote, replace the automatic estimate with that figure.</p>
+<h2>How the payment and payoff date are calculated</h2>
+<p>The loan amount is the purchase price minus the down payment. For a fixed-rate loan, divide the annual interest rate by 12 to get the monthly rate, expressed as a decimal. Multiply the loan amount by that monthly rate, then divide by one minus the reciprocal of one plus the monthly rate raised to the number of payments. A zero-interest loan simply divides the loan amount by the number of months.</p>
+<p>Each month, interest equals the opening balance times the monthly rate. The rest of the loan payment pays down principal. The annual tax and insurance figures are divided by 12 and added alongside HOA dues and any PMI. The loan balance chart and amortization table follow principal and interest. Taxes, insurance, and HOA dues are part of the housing budget and can continue after the loan is paid off.</p>
+<h2>Worked example with taxes, PMI, and HOA</h2>
+<div class="ad-slot" data-slot="mid"></div>
+<p>On a $400,000 home with $60,000 down, the loan is $340,000. At 6.5% for 30 years, principal and interest are $2,149.03 per month. Annual taxes of $4,800 add $400 monthly. Annual insurance of $1,800 adds $150, and HOA dues add $50. Estimated monthly PMI of $141.67 brings the starting payment to $2,890.70.</p>
+<p>With the first payment in January 2027 and no extra principal, the last payment is in December 2056. Total interest is $433,651.26. In this model, the balance reaches 78% of the purchase price after payment 75. The next payment is the first one shown without PMI.</p>
+<h2>Common mistakes when comparing loan estimates</h2>
+<p>Use the quoted interest rate in the calculator. APR includes certain borrowing costs and is useful when comparing lender offers, but using it in the payment formula changes the monthly estimate. Check whether the seller’s current tax bill reflects a special exemption or assessment. Your own bill may differ. Ask whether the insurance quote includes the coverage you need, and budget separately for maintenance and utilities.</p>
+<p>Try an extra monthly amount you can sustain. The calculator applies it to principal and compares total interest and payoff timing against the regular schedule. Actual PMI timing can differ from this model when you pay ahead. For a covered conventional loan, automatic termination generally follows the original schedule. You may be eligible to request earlier cancellation. See the <a href="https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/">CFPB’s PMI guidance</a>. If you plan to rent the property, use the <a href="/rental-property-calculator/">rental property calculator</a> to estimate operating cash flow.</p>
+<h2>Frequently asked questions</h2>
+<h3>Does the monthly mortgage payment include taxes and insurance?</h3><p>Yes. The starting estimate includes principal, interest, one month of property tax and insurance, HOA dues, applicable PMI, and any extra principal you entered.</p>
+<h3>What PMI rate does the calculator assume?</h3><p>It estimates annual PMI at 0.5% of the original loan amount when you put less than 20% down. A lender quote can vary. Enter the quoted monthly premium to override the estimate.</p>
+<h3>When does PMI drop out of the estimate?</h3><p>The model removes PMI from the next payment once the modeled balance reaches 78% of the original home price. For covered loans, actual automatic termination generally follows the original schedule and depends on being current.</p>
+<h3>Can I compare a 15-year and 30-year mortgage?</h3><p>Yes. Keep the price and down payment fixed and change the term. Use the quoted rate for each term, then compare the starting payment and total interest.</p>
+<h3>How do I read the amortization table?</h3><p>Each year shows its ending balance. Expand a year to see the date, payment, principal, interest, and remaining balance for each month. Payment figures in the table cover the loan itself.</p>
+</article></main>
+<footer class="site-footer"><div class="in"><nav aria-label="Footer"><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav><p>© 2026 RentalDealMath</p><p>For educational purposes only. Not financial advice.</p></div></footer>
+<script>
+const byId = id => document.getElementById(id);
+const form = byId('inputs');
+const results = byId('results');
+const status = byId('status');
+const controls = [...form.querySelectorAll('input, select')];
+const currency = new Intl.NumberFormat('en-US', {style:'currency',currency:'USD'});
+const money = amount => currency.format(Math.abs(amount) < .005 ? 0 : amount);
+const percent = value => value.toFixed(2) + '%';
+const defaultModes = {down:'down',tax:'tax'};
+let modes = {...defaultModes};
+let inputWarning = false;
+
+function number(id, max = 1e12, min = 0) {
+  const field = byId(id);
+  const raw = field.value.trim().replaceAll(',', '');
+  const valid = raw === '' || /^-?(?:\d+(?:\.\d*)?|\.\d+)$/.test(raw);
+  const value = valid ? Number(raw) : min;
+  const bounded = Math.max(min, Math.min(max, value));
+  const invalid = !valid || value !== bounded;
+  field.setAttribute('aria-invalid', String(invalid));
+  inputWarning ||= invalid;
+  return bounded;
+}
+
+function group(raw) {
+  const plain = raw.replaceAll(',', '');
+  if (!/^-?\d*(?:\.\d*)?$/.test(plain)) return raw;
+  const [integer, decimal] = plain.split('.');
+  const grouped = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return decimal === undefined ? grouped : grouped + '.' + decimal;
+}
+
+function format(field) {
+  const raw = field.value;
+  const formatted = group(raw);
+  if (formatted === raw) return;
+  const cursor = field.selectionStart;
+  const remaining = raw.slice(cursor).replaceAll(',', '').length;
+  field.value = formatted;
+  let position = formatted.length;
+  for (let count = remaining; count > 0 && position > 0; ) {
+    if (formatted[--position] !== ',') count--;
+  }
+  field.setSelectionRange(position, position);
+}
+
+function setNumber(id, value, precision) {
+  const field = byId(id);
+  field.value = group(String(Number(value.toFixed(precision))));
+  field.setAttribute('aria-invalid','false');
+}
+
+function payment(principal, annualRate, months) {
+  const rate = annualRate / 1200;
+  const denominator = -Math.expm1(-months * Math.log1p(rate));
+  return denominator > 0 ? principal * (rate / denominator) : principal / months;
+}
+
+const metrics = rows => '<dl class="metrics">' + rows.map(([label,value]) =>
+  '<div><dt>'+label+'</dt><dd>'+value+'</dd></div>').join('') + '</dl>';
+const hero = (label,value,note='') => '<div class="hero-result">'+label+'<strong>'+value+'</strong>'+note+'</div>';
+const verdict = value => '<p class="verdict">'+value+'</p>';
+
+function update() {
+  inputWarning = false;
+  render();
+  if (inputWarning) results.insertAdjacentHTML('beforeend','<p class="muted">Check the marked inputs. Estimates use zero or the nearest supported limit for those entries.</p>');
+  status.textContent = '';
+  try {
+    localStorage.setItem(key, JSON.stringify({values:Object.fromEntries(controls.map(field => [field.id, field.value])),modes}));
+  } catch {}
+}
+
+async function copyResults() {
+  const copy = document.querySelector('h1').textContent + '\n' + results.innerText;
+  try {
+    await navigator.clipboard.writeText(copy);
+    status.textContent = 'Results copied.';
+  } catch {
+    const field = document.createElement('textarea');
+    field.value = copy;
+    field.setAttribute('aria-label','Results to copy');
+    field.style.cssText = 'position:fixed;inset:0 auto auto 0;opacity:0';
+    document.body.append(field);
+    field.select();
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch {}
+    field.remove();
+    byId('copy').focus();
+    if (!copied) {
+      const range = document.createRange();
+      range.selectNodeContents(results);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+    status.textContent = copied ? 'Results copied.' : 'Results selected. Use your device’s copy command.';
+  }
+}
+
+function initialize() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(key));
+    for (const field of controls) {
+      const value = saved?.values?.[field.id];
+      if (typeof value === 'string' && value.length <= 24 &&
+          (field.tagName !== 'SELECT' || [...field.options].some(option => option.value === value))) field.value = value;
+    }
+    if (saved?.modes?.down === 'downPct') modes.down = 'downPct';
+    if (saved?.modes?.tax === 'taxPct') modes.tax = 'taxPct';
+  } catch {}
+  form.addEventListener('submit', event => event.preventDefault());
+  form.addEventListener('input', ({target}) => {
+    if (target.type === 'text') format(target);
+    if (target.id === 'down' || target.id === 'downPct') modes.down = target.id;
+    if (target.id === 'taxPct' || (target.id === 'tax' && byId('taxPct'))) modes.tax = target.id;
+    update();
+  });
+  form.addEventListener('reset', () => {
+    modes = {...defaultModes};
+    requestAnimationFrame(update);
+  });
+  byId('copy').addEventListener('click', copyResults);
+  update();
+}
+
+const key = 'rentaldealmath:mortgage-calculator:v1';
+const monthLabel = new Intl.DateTimeFormat('en-US',{month:'short',year:'numeric'});
+const chart = byId('chart');
+let plotted = [0];
+let chartColors = [];
+
+function amortize(principal, price, rate, months, extra, pmi) {
+  const pi = payment(principal, rate, months);
+  let balance = principal;
+  let interestTotal = 0;
+  const rows = [];
+  for (let month = 1; month <= months && balance > 0; month++) {
+    const interest = balance * (rate / 1200);
+    const paid = month === months || balance <= pi + extra - interest + .000001
+      ? balance : pi + extra - interest;
+    const monthlyPmi = balance > price * .78 + .000001 ? pmi : 0;
+    balance -= paid;
+    interestTotal += interest;
+    rows.push({paid,interest,balance,pmi:monthlyPmi});
+  }
+  return {rows,interestTotal};
+}
+
+function drawChart() {
+  const width = chart.clientWidth;
+  const height = chart.clientHeight;
+  if (!width || !height) return;
+  const scale = window.devicePixelRatio || 1;
+  chart.width = Math.round(width * scale);
+  chart.height = Math.round(height * scale);
+  const ctx = chart.getContext('2d');
+  if (!ctx) return;
+  ctx.scale(scale, scale);
+  const style = getComputedStyle(chart);
+  const left = Math.min(112, Math.max(68, width * .27));
+  const right = width - 12;
+  const top = 17;
+  const bottom = height - 28;
+  const max = plotted[0] || 1;
+  const x = index => left + (right-left) * index / Math.max(1,plotted.length-1);
+  const y = balance => bottom - (bottom-top) * balance / max;
+  ctx.font = '12px system-ui';
+  ctx.fillStyle = style.getPropertyValue('--muted');
+  ctx.strokeStyle = style.getPropertyValue('--line');
+  ctx.textBaseline = 'middle';
+  const compact = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',notation:'compact',maximumFractionDigits:1});
+  for (const fraction of [0,.5,1]) {
+    const balance = plotted[0] * fraction;
+    if (fraction > 0 && !plotted[0]) continue;
+    ctx.beginPath(); ctx.moveTo(left,y(balance)); ctx.lineTo(right,y(balance)); ctx.stroke();
+    ctx.fillText(compact.format(balance),3,y(balance));
+  }
+  ctx.fillText('Start',left,bottom+17);
+  if (plotted.length > 1) {
+    ctx.textAlign = 'right';
+    ctx.fillText('Month '+(plotted.length-1),right,bottom+17);
+    ctx.strokeStyle = style.getPropertyValue('--accent');
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    plotted.forEach((balance,index) => index ? ctx.lineTo(x(index),y(balance)) : ctx.moveTo(x(index),y(balance)));
+    ctx.stroke();
+  }
+}
+
+new ResizeObserver(drawChart).observe(chart);
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',drawChart);
+
+function showSchedule(rows, dateAt) {
+  const schedule = byId('schedule');
+  const open = new Set([...schedule.querySelectorAll('details[open]')].map(item => item.dataset.year));
+  let html = '';
+  for (let i = 0; i < rows.length; i += 12) {
+    const year = String(i / 12 + 1);
+    const months = rows.slice(i,i+12);
+    const end = months.at(-1).balance;
+    const tableRows = months.map(({paid,interest,balance}, j) =>
+      '<tr><th scope="row">'+dateAt(i+j)+'</th><td>'+money(paid+interest)+'</td><td>'+money(paid)+'</td><td>'+money(interest)+'</td><td>'+money(balance)+'</td></tr>').join('');
+    const totals = months.reduce(([paid,interest],row) => [paid+row.paid,interest+row.interest],[0,0]);
+    html += '<details data-year="'+year+'"'+(open.has(year)?' open':'')+'><summary>Year '+year+
+      '<span class="year-total">'+money(end)+' balance</span></summary><table><caption>Monthly payments in loan year '+year+
+      '</caption><thead><tr><th scope="col">Month</th><th scope="col">Payment</th><th scope="col">Principal</th><th scope="col">Interest</th><th scope="col">Balance</th></tr></thead><tbody>'+tableRows+
+      '</tbody><tfoot><tr><th scope="row">Year total</th><td>'+money(totals[0]+totals[1])+'</td><td>'+money(totals[0])+'</td><td>'+money(totals[1])+'</td><td>'+money(end)+'</td></tr></tfoot></table></details>';
+  }
+  schedule.innerHTML = html || '<p class="muted">Enter a home price and a loan amount to see the schedule.</p>';
+}
+
+function render() {
+  const price = number('price');
+  const down = modes.down === 'downPct' ? price * number('downPct',100) / 100 : number('down',price);
+  if (modes.down === 'downPct') setNumber('down',down,2);
+  else setNumber('downPct',price ? down / price * 100 : 0,4);
+  const tax = modes.tax === 'taxPct' ? price * number('taxPct',100) / 100 : number('tax');
+  if (modes.tax === 'taxPct') setNumber('tax',tax,2);
+  else setNumber('taxPct',price ? tax / price * 100 : 0,4);
+  const insurance = number('insurance') / 12;
+  const hoa = number('hoa');
+  const rate = number('rate',100);
+  const months = Number(byId('term').value) * 12;
+  const loan = Math.max(0,price-down);
+  const pmiInput = byId('pmi');
+  const pmi = price && down < price * .8 && loan > price * .8 + .000001
+    ? (pmiInput.value.trim() ? number('pmi') : loan * .005 / 12) : 0;
+  if (pmi === 0 && loan <= price * .8 + .000001) pmiInput.setAttribute('aria-invalid','false');
+  const extra = number('extra');
+  const start = byId('start');
+  const startValue = start.value && start.validity.valid ? start.value : start.defaultValue;
+  const [year,month] = startValue.split('-').map(Number);
+  const dateAt = offset => monthLabel.format(new Date(year,month-1+offset,1,12));
+  const regular = amortize(loan,price,rate,months,0,pmi);
+  const plan = extra ? amortize(loan,price,rate,months,extra,pmi) : regular;
+  const first = plan.rows[0];
+  const firstPI = first ? first.paid + first.interest : 0;
+  const regularPI = Math.min(firstPI,payment(loan,rate,months));
+  const appliedExtra = Math.max(0,firstPI - regularPI);
+  chartColors = ['#0d6b5c','#598c84','#7c8ec0','#b87b52','#8879a6','#4cc3a7'];
+  const components = [['Principal &amp; interest',regularPI],['Property tax',tax/12],['Home insurance',insurance],['PMI',first?.pmi || 0],['HOA dues',hoa],['Extra principal',appliedExtra]];
+  const total = components.reduce((sum,[,amount])=>sum+amount,0);
+  const bar = '<div class="bar" aria-hidden="true">'+components.map(([,amount],i)=> amount && total ?
+    '<span style="width:'+(amount/total*100)+'%;background:'+chartColors[i]+'"></span>' : '').join('')+'</div>';
+  const rows = components.filter(([,amount],i)=> i<5 || amount>0).map(([label,amount],i)=>['<span class="swatch" aria-hidden="true" style="background:'+chartColors[i]+'"></span>'+label,money(amount)]);
+  const pmiEnd = plan.rows.findIndex(row => row.pmi === 0);
+  results.innerHTML = hero('Starting monthly payment',money(total),'Includes taxes, insurance and any extra principal.') + bar + metrics(rows) +
+    '<h3 style="margin-top:18px">Loan outlook</h3>'+metrics([
+      ['Loan amount',money(loan)],['Total interest',money(plan.interestTotal)],['Payoff date',first ? dateAt(plan.rows.length-1) : 'No loan'],
+      ['Interest saved',money(Math.max(0,regular.interestTotal-plan.interestTotal))],['Months saved',String(regular.rows.length-plan.rows.length)],
+      ...(pmi ? [['First payment without PMI',pmiEnd >= 0 ? dateAt(pmiEnd) : 'After payoff']] : [])
+    ]);
+  plotted = [loan,...plan.rows.map(row=>row.balance)];
+  drawChart();
+  showSchedule(plan.rows,dateAt);
+}
+
+initialize();
+</script><div id="cc" role="dialog" aria-label="Cookie consent" hidden style="position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:560px;margin:0 auto;background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--line,#ddd);border-radius:12px;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.18);font:14px/1.5 system-ui,sans-serif">
+<p style="margin:0 0 10px">We use cookies to measure traffic and, later, to show ads. See our <a href="/privacy/">privacy policy</a>.</p>
+<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" data-c="no" style="padding:8px 14px;border-radius:8px;border:1px solid var(--line,#ccc);background:transparent;color:inherit;cursor:pointer">Reject</button><button type="button" data-c="yes" style="padding:8px 14px;border-radius:8px;border:0;background:var(--accent,#2457d6);color:#fff;cursor:pointer">Accept</button></div></div>
+<script>
+(function(){try{var tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';if(!/^(Europe\/|Atlantic\/(Reykjavik|Canary|Madeira|Faroe))/.test(tz)||localStorage.getItem('ff_consent'))return;}catch(e){return;}
+var b=document.getElementById('cc');b.hidden=false;b.addEventListener('click',function(e){var v=e.target.getAttribute&&e.target.getAttribute('data-c');if(!v)return;try{localStorage.setItem('ff_consent',v)}catch(x){}var g=v==='yes'?'granted':'denied';gtag('consent','update',{ad_storage:g,ad_user_data:g,ad_personalization:g,analytics_storage:g});b.hidden=true;});})();
+</script>
+</body></html>

@@ -1,0 +1,6 @@
+Date,Tenant,Unit,Description,Charge ($),Payment ($),Payment method / ref,Balance ($)
+2026-11-01,J. Smith,Unit A,November rent,1450,,,1450
+2026-11-03,J. Smith,Unit A,Payment,,1450,Bank transfer,0
+2026-12-01,J. Smith,Unit A,December rent,1450,,,1450
+2026-12-08,J. Smith,Unit A,Late fee,50,,,1500
+2026-12-10,J. Smith,Unit A,Payment,,1000,Check #1042,500

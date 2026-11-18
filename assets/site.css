@@ -1,0 +1,65 @@
+/* RentalDealMath shared styles: tokens, header, footer, content pages. */
+:root{
+  --bg:#f4f5f2; --surface:#ffffff; --ink:#16201d; --muted:#5d6b66; --line:#dde2dd;
+  --accent:#0d6b5c; --accent-soft:#e2f0ec;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1513; --surface:#17201d; --ink:#e6ece9; --muted:#97a6a0; --line:#2a3632;
+    --accent:#4cc3a7; --accent-soft:#163029; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1513; --surface:#17201d; --ink:#e6ece9; --muted:#97a6a0; --line:#2a3632;
+  --accent:#4cc3a7; --accent-soft:#163029; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.site-header{border-bottom:1px solid var(--line);background:var(--surface)}
+.site-header .in{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:700 19px var(--display);letter-spacing:-.01em}
+.brand svg{width:28px;height:28px;flex:none}
+.brand b{color:var(--accent);font-weight:700}
+.site-nav{display:flex;gap:18px;flex-wrap:wrap;font-size:15px}
+.site-nav a{color:var(--muted);text-decoration:none;font-weight:500}
+.site-nav a:hover,.site-nav a[aria-current="page"]{color:var(--ink)}
+
+.site-footer{border-top:1px solid var(--line);margin-top:48px;background:var(--surface)}
+.site-footer .in{max-width:1180px;margin:0 auto;padding:28px 20px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;font-size:14px;color:var(--muted)}
+@media (max-width:700px){.site-footer .in{grid-template-columns:1fr}}
+.site-footer h4{font:600 13px var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin:0 0 8px}
+.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.site-footer a{color:var(--muted);text-decoration:none}
+.site-footer a:hover{color:var(--ink)}
+.site-footer p{margin:0 0 8px;max-width:60ch}
+
+/* Content pages */
+.page{max-width:760px;margin:0 auto;padding:40px 20px}
+.page h1{font:700 clamp(30px,4.5vw,42px)/1.1 var(--display);margin:0 0 12px;text-wrap:balance}
+.page h2{font:700 24px/1.25 var(--display);margin:36px 0 10px;text-wrap:balance}
+.page h3{font:700 18px/1.3 var(--display);margin:24px 0 6px}
+.page p,.page li{max-width:68ch}
+.page .lede{font-size:18px;color:var(--muted)}
+.page .updated{color:var(--muted);font-size:14px}
+.formula{font:500 15px var(--mono);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;overflow-x:auto}
+
+/* Mobile polish (Nov 2026) */
+@media (max-width:640px){
+  .site-nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:20px;white-space:nowrap;mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .site-nav::-webkit-scrollbar{display:none}
+  .site-nav a{display:inline-block;padding:10px 0}
+  input,select,textarea{font-size:16px!important}
+  button,select,input[type=submit],input[type=button],.btn,a.btn{min-height:44px}
+  input[type=checkbox],input[type=radio]{min-width:22px;min-height:22px}
+  table{max-width:100%}
+  img,canvas,video,svg{max-width:100%}
+  body{-webkit-text-size-adjust:100%;overflow-wrap:break-word}
+}

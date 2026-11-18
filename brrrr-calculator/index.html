@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en-US"><head>
+<!-- Google Analytics 4 with Consent Mode v2 -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'],wait_for_update:500});
+gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});
+try{var c=localStorage.getItem('ff_consent');if(c){var g=c==='yes'?'granted':'denied';gtag('consent','update',{ad_storage:g,ad_user_data:g,ad_personalization:g,analytics_storage:g});}}catch(e){}
+gtag('js',new Date());gtag('config','G-Y093FX732P');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y093FX732P"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8544265950892925" crossorigin="anonymous"></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>BRRRR Calculator for Rental Investors | RentalDealMath</title><meta name="description" content="Estimate cash back at refinance, cash left in the deal, monthly cash flow and cash-on-cash return for a BRRRR rental property.">
+<link rel="canonical" href="https://rentaldealmath.com/brrrr-calculator/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:site_name" content="RentalDealMath"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="BRRRR Calculator for Rental Investors | RentalDealMath"><meta property="og:description" content="Estimate cash back at refinance, cash left in the deal, monthly cash flow and cash-on-cash return for a BRRRR rental property."><meta property="og:url" content="https://rentaldealmath.com/brrrr-calculator/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&amp;family=Figtree:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&amp;family=Figtree:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap"></noscript>
+<style>:root{--bg:#f4f5f2;--surface:#ffffff;--ink:#16201d;--muted:#5d6b66;--line:#dde2dd;--accent:#0d6b5c;--accent-soft:#e2f0ec;--display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Figtree","Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme: dark){:root{--bg:#0f1513;--surface:#17201d;--ink:#e6ece9;--muted:#97a6a0;--line:#2a3632;--accent:#4cc3a7;--accent-soft:#163029}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.55 var(--body)}
+a{color:var(--accent);text-underline-offset:.17em}
+.in{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+.site-header,.site-footer{background:var(--surface)}
+.site-header{border-bottom:1px solid var(--line)}
+.site-header .in{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-block:15px}
+.brand{display:inline-flex;align-items:center;gap:9px;font:600 1.2rem var(--display);color:var(--ink);text-decoration:none}
+.brand svg{width:32px;height:32px}.brand b{color:var(--accent)}
+.site-nav,.site-footer nav{display:flex;flex-wrap:wrap;gap:8px 16px}
+.site-nav a{color:var(--muted);font-size:.94rem;text-decoration:none;font-weight:600}
+.site-nav a:hover,.site-nav a[aria-current]{color:var(--accent);text-decoration:underline}
+h1,h2,h3{font-family:var(--display);line-height:1.2;margin:0}
+h1{font-size:clamp(2.25rem,5vw,3.7rem);letter-spacing:-.035em}
+h2{font-size:1.42rem}h3{font-size:1.16rem}
+p{margin:.65em 0 0}
+.intro{padding-block:clamp(26px,5vw,52px)}
+.intro>p:last-child{font-size:1.13rem;color:var(--muted)}
+.eyebrow{margin:0 0 8px;color:var(--accent);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.11em}
+.layout,.fields{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.layout{align-items:start}
+.layout>*,.fields>*,fieldset{min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(15px,3vw,28px);overflow-wrap:anywhere}
+.muted{color:var(--muted);font-size:.94rem}
+.fields{margin-top:18px;gap:13px}
+.field{display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
+label{font-weight:600;font-size:.93rem;line-height:1.3}
+input,select{min-width:0;width:100%;height:44px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:500 1rem var(--mono);padding:7px 9px}
+[aria-invalid="true"]{border-color:var(--accent);outline:1px dashed var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px}
+button{border:1px solid var(--accent);background:var(--accent);color:var(--surface);border-radius:8px;padding:10px 14px;min-height:44px;font:600 1rem var(--body);cursor:pointer}
+.secondary{color:var(--accent);background:var(--surface);border-color:var(--line)}
+.hero-result{background:var(--accent-soft);border-radius:10px;margin:14px 0;padding:14px}
+.hero-result strong{display:block;color:var(--accent);font:500 clamp(1.6rem,4.3vw,2.65rem)/1.2 var(--mono);margin-block:4px}
+.metrics{margin:0}
+.metrics>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;padding:8px 0;border-bottom:1px solid var(--line)}
+dd{margin:0;text-align:right;font:500 .92rem/1.55 var(--mono)}
+.verdict{margin-top:14px;background:var(--accent-soft);border-radius:8px;padding:10px 12px}
+.bar{display:flex;height:10px;border-radius:99px;overflow:hidden;background:var(--line);margin:16px 0 5px}
+.swatch{display:inline-block;width:.63em;height:.63em;margin-right:6px;border-radius:2px}
+.schedule,.guide{margin-block:18px}
+canvas{display:block;width:100%;height:210px;margin:10px 0 22px}
+details{border-bottom:1px solid var(--line);padding:6px 0}
+summary{cursor:pointer;padding:9px 3px;min-height:42px;font-weight:600}
+.year-total{color:var(--muted);font:500 .84rem var(--mono);margin-left:8px}
+table{width:100%;table-layout:fixed;border-collapse:collapse;font:500 .79rem/1.4 var(--mono)}
+caption{text-align:left;margin:6px 0;color:var(--muted)}
+th,td{text-align:right;border-bottom:1px solid var(--line);padding:6px 2px;overflow-wrap:anywhere}
+th:first-child{text-align:left}
+.guide{padding-bottom:28px}
+.guide p{max-width:75ch}
+.guide h2:not(:first-child){margin-top:24px}
+.guide h3{margin-top:17px}
+.ad-slot{display:none}
+.site-footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:.94rem}
+@media(max-width:760px){.layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:400px){.fields{grid-template-columns:minmax(0,1fr)}}
+
+/* Mobile polish (Nov 2026) */
+@media (max-width:640px){
+  .site-nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:20px;white-space:nowrap;mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .site-nav::-webkit-scrollbar{display:none}
+  .site-nav a{display:inline-block;padding:10px 0}
+  input,select,textarea{font-size:16px!important}
+  button,select,input[type=submit],input[type=button],.btn,a.btn{min-height:44px}
+  input[type=checkbox],input[type=radio]{min-width:22px;min-height:22px}
+  table{max-width:100%}
+  img,canvas,video,svg{max-width:100%}
+  body{-webkit-text-size-adjust:100%;overflow-wrap:break-word}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"BRRRR Calculator","url":"https://rentaldealmath.com/brrrr-calculator/","description":"Estimate cash back at refinance, cash left in the deal, monthly cash flow and cash-on-cash return for a BRRRR rental property.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":0,"priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does ARV mean in a BRRRR deal?","acceptedAnswer":{"@type":"Answer","text":"After-repair value is the estimated market value after renovation. Use comparable sales for similar finished properties and test what happens if the appraisal comes in lower."}},{"@type":"Question","name":"How much can I borrow against the ARV?","acceptedAnswer":{"@type":"Answer","text":"This model multiplies ARV by the refinance LTV you enter. A $250,000 ARV at 75% LTV produces a $187,500 gross loan. Actual proceeds depend on loan terms and closing costs."}},{"@type":"Question","name":"What does cash left in the deal mean?","acceptedAnswer":{"@type":"Answer","text":"It is the initial cash invested minus the net refinance proceeds. A positive number is cash still invested. If proceeds exceed the initial investment, the calculator shows the excess."}},{"@type":"Question","name":"Why does the calculator say the return is infinite?","acceptedAnswer":{"@type":"Answer","text":"There is no positive remaining cash investment to use as the denominator. Look at monthly cash flow and the dollar amount recovered to interpret that scenario."}},{"@type":"Question","name":"Are taxes and insurance included in the new mortgage payment?","acceptedAnswer":{"@type":"Answer","text":"The mortgage output covers principal and interest. Include taxes and insurance in monthly operating expenses so they are counted once in cash flow."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rentaldealmath.com/"},{"@type":"ListItem","position":2,"name":"BRRRR Calculator","item":"https://rentaldealmath.com/brrrr-calculator/"}]}]}</script></head><body>
+<header class="site-header"><div class="in"><a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M7 15.5 16 8l9 7.5" fill="none" stroke="var(--surface)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 19h10M11 23.5h10" stroke="var(--surface)" stroke-width="2.4" stroke-linecap="round"/></svg><span>RentalDeal<b>Math</b></span></a><nav class="site-nav" aria-label="Main"><a href="/rental-property-calculator/">Rental Property</a><a href="/mortgage-calculator/">Mortgage</a><a href="/cap-rate-calculator/">Cap Rate</a><a href="/brrrr-calculator/" aria-current="page">BRRRR</a><a href="/rental-vs-airbnb-calculator/">Airbnb vs Rent</a><a href="/rent-vs-buy-calculator/">Rent vs Buy</a><a href="/rent-ledger-template/">Rent Ledger</a><a href="/about/">About</a></nav></div></header>
+<main class="in">
+<div class="intro"><p class="eyebrow">Free real estate calculator</p><h1>BRRRR Calculator</h1><p>Run the numbers on Buy, Rehab, Rent, Refinance, Repeat, from purchase through the refinance and rental cash flow.</p></div>
+<noscript><p class="card">Enable JavaScript to calculate results.</p></noscript>
+<div class="layout">
+<form id="inputs" class="card" aria-labelledby="input-title"><h2 id="input-title">Inputs</h2><p id="assumptions" class="muted">This model assumes an all-cash purchase and no existing loan to pay off at refinance. Include recurring vacancy, taxes, insurance and reserves in monthly expenses.</p><div class="fields"><div class="field"><label for="price">Purchase price ($)</label><input id="price" type="text" inputmode="decimal" maxlength="24" value="150,000"></div>
+<div class="field"><label for="closing">Purchase closing costs ($)</label><input id="closing" type="text" inputmode="decimal" maxlength="24" value="4,500"></div>
+<div class="field"><label for="rehab">Rehab cost ($)</label><input id="rehab" type="text" inputmode="decimal" maxlength="24" value="30,000"></div>
+<div class="field"><label for="holding">Holding period (months)</label><input id="holding" type="text" inputmode="decimal" maxlength="24" value="4"></div>
+<div class="field"><label for="holdCost">Monthly holding costs ($)</label><input id="holdCost" type="text" inputmode="decimal" maxlength="24" value="1,000"></div>
+<div class="field"><label for="arv">After-repair value ($)</label><input id="arv" type="text" inputmode="decimal" maxlength="24" value="250,000"></div>
+<div class="field"><label for="ltv">Refinance LTV (%)</label><input id="ltv" type="text" inputmode="decimal" maxlength="24" value="75"></div>
+<div class="field"><label for="rate">Refinance interest rate (%)</label><input id="rate" type="text" inputmode="decimal" maxlength="24" value="6.75"></div>
+<div class="field"><label for="term">Refinance term (years)</label><select id="term"><option>15</option><option>20</option><option>25</option><option selected>30</option></select></div>
+<div class="field"><label for="refiCost">Refinance closing costs ($)</label><input id="refiCost" type="text" inputmode="decimal" maxlength="24" value="5,000"></div>
+<div class="field"><label for="rent">Monthly rent ($)</label><input id="rent" type="text" inputmode="decimal" maxlength="24" value="2,200"></div>
+<div class="field"><label for="expenses">Monthly operating expenses ($)</label><input id="expenses" type="text" inputmode="decimal" maxlength="24" value="750"></div></div><div class="actions"><button type="reset" class="secondary">Reset</button></div></form>
+<section class="card" aria-labelledby="results-title"><h2 id="results-title">Estimated results</h2><div id="results"></div><div class="actions"><button type="button" id="copy">Copy results</button><span id="status" role="status"></span></div><div class="ad-slot" data-slot="top"></div></section>
+</div>
+
+<article class="card guide">
+<h2>How to model a BRRRR rental</h2>
+<p>BRRRR stands for Buy, Rehab, Rent, Refinance, Repeat. Start with the purchase price, purchase closing costs, and the rehab budget. Enter how many months you expect to hold the property before refinancing and the monthly costs during that period. These could include utilities, insurance, taxes, and other carrying costs. The calculator assumes you buy in cash and refinance without an existing loan balance to pay off.</p>
+<p>Enter an after-repair value, or ARV, based on comparable properties in similar condition. Then set the refinance loan-to-value ratio, interest rate, loan term, and closing costs. The 75% LTV starting value is a scenario assumption. Use the terms your lender is willing to quote. Finally, enter monthly rent and recurring operating expenses. Include a vacancy allowance, routine maintenance, management, taxes, insurance, HOA dues, and any reserves you plan to set aside.</p>
+<h2>How cash back and rental returns are calculated</h2>
+<p>Total cash invested before refinance is the purchase price plus purchase closing costs, rehab, and holding costs. Holding costs equal months held times monthly holding costs. The gross refinance loan is ARV multiplied by LTV. Subtract refinance closing costs from the loan to get net cash-out. Subtract that net amount from the initial cash invested to see what remains in the deal. If net proceeds exceed the initial cash, the calculator shows the surplus as money pulled out.</p>
+<p>The new mortgage payment uses fixed-rate principal and interest. Monthly cash flow is rent minus recurring operating expenses and the new mortgage payment. Multiply the monthly cash flow by 12 and divide it by cash left in the deal to get annual cash-on-cash return. If there is zero or negative cash left, the calculator displays “infinite” as shorthand for having no positive cash invested to divide by. Monthly cash flow still tells you whether the rental supports itself.</p>
+<h2>Worked example with a $250,000 ARV</h2>
+<div class="ad-slot" data-slot="mid"></div>
+<p>Suppose you buy for $150,000, spend $4,500 on purchase closing costs and $30,000 on rehab, and hold the property for four months at $1,000 per month. Your cash invested before refinance is $188,500. At a $250,000 ARV and 75% LTV, the gross loan is $187,500. With $5,000 in refinance closing costs, you receive $182,500 net and leave $6,000 invested.</p>
+<p>At 6.75% for 30 years, the new principal and interest payment is $1,216.12. Monthly rent of $2,200 and expenses of $750 leave $233.88 in monthly cash flow. The annual cash-on-cash estimate is 46.78%, calculated before rounding the monthly cash flow. A small remaining investment can produce a high percentage even when monthly cash flow is modest.</p>
+<h2>Common mistakes before you refinance</h2>
+<p>Stress-test a lower appraisal and a longer rehab timeline. In the example, a $10,000 drop in ARV cuts gross loan proceeds by $7,500 at the same LTV. A delayed refinance can add another month of carrying costs, and a higher rate can raise the mortgage payment. If you use a purchase loan, calculate the payoff and financing costs separately before relying on the cash-out figure.</p>
+<p>Compare the property’s operating income with the <a href="/cap-rate-calculator/">cap rate calculator</a>. Use the <a href="/mortgage-calculator/">mortgage calculator</a> to see how the refinance loan pays down over time. A deal can return most of your initial cash and still need a monthly subsidy if rent falls or expenses rise.</p>
+<h2>Frequently asked questions</h2>
+<h3>What does ARV mean in a BRRRR deal?</h3><p>After-repair value is the estimated market value after renovation. Use comparable sales for similar finished properties and test what happens if the appraisal comes in lower.</p>
+<h3>How much can I borrow against the ARV?</h3><p>This model multiplies ARV by the refinance LTV you enter. A $250,000 ARV at 75% LTV produces a $187,500 gross loan. Actual proceeds depend on loan terms and closing costs.</p>
+<h3>What does cash left in the deal mean?</h3><p>It is the initial cash invested minus the net refinance proceeds. A positive number is cash still invested. If proceeds exceed the initial investment, the calculator shows the excess.</p>
+<h3>Why does the calculator say the return is infinite?</h3><p>There is no positive remaining cash investment to use as the denominator. Look at monthly cash flow and the dollar amount recovered to interpret that scenario.</p>
+<h3>Are taxes and insurance included in the new mortgage payment?</h3><p>The mortgage output covers principal and interest. Include taxes and insurance in monthly operating expenses so they are counted once in cash flow.</p>
+</article></main>
+<footer class="site-footer"><div class="in"><nav aria-label="Footer"><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav><p>© 2026 RentalDealMath</p><p>For educational purposes only. Not financial advice.</p></div></footer>
+<script>
+const byId = id => document.getElementById(id);
+const form = byId('inputs');
+const results = byId('results');
+const status = byId('status');
+const controls = [...form.querySelectorAll('input, select')];
+const currency = new Intl.NumberFormat('en-US', {style:'currency',currency:'USD'});
+const money = amount => currency.format(Math.abs(amount) < .005 ? 0 : amount);
+const percent = value => value.toFixed(2) + '%';
+const defaultModes = {down:'down',tax:'tax'};
+let modes = {...defaultModes};
+let inputWarning = false;
+
+function number(id, max = 1e12, min = 0) {
+  const field = byId(id);
+  const raw = field.value.trim().replaceAll(',', '');
+  const valid = raw === '' || /^-?(?:\d+(?:\.\d*)?|\.\d+)$/.test(raw);
+  const value = valid ? Number(raw) : min;
+  const bounded = Math.max(min, Math.min(max, value));
+  const invalid = !valid || value !== bounded;
+  field.setAttribute('aria-invalid', String(invalid));
+  inputWarning ||= invalid;
+  return bounded;
+}
+
+function group(raw) {
+  const plain = raw.replaceAll(',', '');
+  if (!/^-?\d*(?:\.\d*)?$/.test(plain)) return raw;
+  const [integer, decimal] = plain.split('.');
+  const grouped = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return decimal === undefined ? grouped : grouped + '.' + decimal;
+}
+
+function format(field) {
+  const raw = field.value;
+  const formatted = group(raw);
+  if (formatted === raw) return;
+  const cursor = field.selectionStart;
+  const remaining = raw.slice(cursor).replaceAll(',', '').length;
+  field.value = formatted;
+  let position = formatted.length;
+  for (let count = remaining; count > 0 && position > 0; ) {
+    if (formatted[--position] !== ',') count--;
+  }
+  field.setSelectionRange(position, position);
+}
+
+function setNumber(id, value, precision) {
+  const field = byId(id);
+  field.value = group(String(Number(value.toFixed(precision))));
+  field.setAttribute('aria-invalid','false');
+}
+
+function payment(principal, annualRate, months) {
+  const rate = annualRate / 1200;
+  const denominator = -Math.expm1(-months * Math.log1p(rate));
+  return denominator > 0 ? principal * (rate / denominator) : principal / months;
+}
+
+const metrics = rows => '<dl class="metrics">' + rows.map(([label,value]) =>
+  '<div><dt>'+label+'</dt><dd>'+value+'</dd></div>').join('') + '</dl>';
+const hero = (label,value,note='') => '<div class="hero-result">'+label+'<strong>'+value+'</strong>'+note+'</div>';
+const verdict = value => '<p class="verdict">'+value+'</p>';
+
+function update() {
+  inputWarning = false;
+  render();
+  if (inputWarning) results.insertAdjacentHTML('beforeend','<p class="muted">Check the marked inputs. Estimates use zero or the nearest supported limit for those entries.</p>');
+  status.textContent = '';
+  try {
+    localStorage.setItem(key, JSON.stringify({values:Object.fromEntries(controls.map(field => [field.id, field.value])),modes}));
+  } catch {}
+}
+
+async function copyResults() {
+  const copy = document.querySelector('h1').textContent + '\n' + results.innerText;
+  try {
+    await navigator.clipboard.writeText(copy);
+    status.textContent = 'Results copied.';
+  } catch {
+    const field = document.createElement('textarea');
+    field.value = copy;
+    field.setAttribute('aria-label','Results to copy');
+    field.style.cssText = 'position:fixed;inset:0 auto auto 0;opacity:0';
+    document.body.append(field);
+    field.select();
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch {}
+    field.remove();
+    byId('copy').focus();
+    if (!copied) {
+      const range = document.createRange();
+      range.selectNodeContents(results);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+    status.textContent = copied ? 'Results copied.' : 'Results selected. Use your device’s copy command.';
+  }
+}
+
+function initialize() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(key));
+    for (const field of controls) {
+      const value = saved?.values?.[field.id];
+      if (typeof value === 'string' && value.length <= 24 &&
+          (field.tagName !== 'SELECT' || [...field.options].some(option => option.value === value))) field.value = value;
+    }
+    if (saved?.modes?.down === 'downPct') modes.down = 'downPct';
+    if (saved?.modes?.tax === 'taxPct') modes.tax = 'taxPct';
+  } catch {}
+  form.addEventListener('submit', event => event.preventDefault());
+  form.addEventListener('input', ({target}) => {
+    if (target.type === 'text') format(target);
+    if (target.id === 'down' || target.id === 'downPct') modes.down = target.id;
+    if (target.id === 'taxPct' || (target.id === 'tax' && byId('taxPct'))) modes.tax = target.id;
+    update();
+  });
+  form.addEventListener('reset', () => {
+    modes = {...defaultModes};
+    requestAnimationFrame(update);
+  });
+  byId('copy').addEventListener('click', copyResults);
+  update();
+}
+
+const key = 'rentaldealmath:brrrr-calculator:v1';
+function render() {
+  const cost = number('price') + number('closing') + number('rehab') + number('holding',1200) * number('holdCost');
+  const loan = number('arv') * number('ltv',100) / 100;
+  const rate = number('rate',100);
+  const term = Number(byId('term').value);
+  const cashOut = loan - number('refiCost');
+  const left = cost - cashOut;
+  const mortgage = payment(loan,rate,term*12);
+  const flow = number('rent') - number('expenses') - mortgage;
+  const complete = cost > 0 || loan > 0;
+  const returned = left < -.005;
+  const coc = !complete ? '—' : left <= .005 ? 'infinite' : percent(flow * 12 / left * 100);
+  const outlook = !complete ? 'Enter your project costs and refinance assumptions to evaluate the deal.' :
+    flow < -.005 ? 'Negative cash flow. The rental needs a monthly subsidy under these assumptions.' :
+    Math.abs(flow) <= .005 ? 'The rental roughly breaks even each month. There is little room for unexpected expenses.' :
+    left <= .005 ? 'Positive cash flow with all initial cash recovered.' : 'Positive cash flow with some cash still invested.';
+  results.innerHTML = hero('Monthly cash flow',money(flow),'After operating expenses and refinance principal and interest.') + metrics([
+    ['Total cash invested before refinance',money(cost)],['Gross refinance loan',money(loan)],
+    ['Net cash-out at refinance',money(cashOut)],[returned ? 'Money pulled out above initial cash' : 'Cash left in the deal',money(returned ? -left : left)],
+    ['New monthly mortgage (P&amp;I)',money(mortgage)],['Annual cash-on-cash return',coc]
+  ]) + verdict(outlook) + (complete && left <= .005 ? '<p class="muted">“Infinite” means there is no positive cash investment left to divide by. Use monthly cash flow to judge the operating result.</p>' : '');
+}
+
+initialize();
+</script><div id="cc" role="dialog" aria-label="Cookie consent" hidden style="position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:560px;margin:0 auto;background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--line,#ddd);border-radius:12px;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.18);font:14px/1.5 system-ui,sans-serif">
+<p style="margin:0 0 10px">We use cookies to measure traffic and, later, to show ads. See our <a href="/privacy/">privacy policy</a>.</p>
+<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" data-c="no" style="padding:8px 14px;border-radius:8px;border:1px solid var(--line,#ccc);background:transparent;color:inherit;cursor:pointer">Reject</button><button type="button" data-c="yes" style="padding:8px 14px;border-radius:8px;border:0;background:var(--accent,#2457d6);color:#fff;cursor:pointer">Accept</button></div></div>
+<script>
+(function(){try{var tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';if(!/^(Europe\/|Atlantic\/(Reykjavik|Canary|Madeira|Faroe))/.test(tz)||localStorage.getItem('ff_consent'))return;}catch(e){return;}
+var b=document.getElementById('cc');b.hidden=false;b.addEventListener('click',function(e){var v=e.target.getAttribute&&e.target.getAttribute('data-c');if(!v)return;try{localStorage.setItem('ff_consent',v)}catch(x){}var g=v==='yes'?'granted':'denied';gtag('consent','update',{ad_storage:g,ad_user_data:g,ad_personalization:g,analytics_storage:g});b.hidden=true;});})();
+</script>
+</body></html>

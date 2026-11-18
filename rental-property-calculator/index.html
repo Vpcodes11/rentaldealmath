@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<!-- Google Analytics 4 with Consent Mode v2 -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'],wait_for_update:500});
+gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});
+try{var c=localStorage.getItem('ff_consent');if(c){var g=c==='yes'?'granted':'denied';gtag('consent','update',{ad_storage:g,ad_user_data:g,ad_personalization:g,analytics_storage:g});}}catch(e){}
+gtag('js',new Date());gtag('config','G-Y093FX732P');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y093FX732P"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8544265950892925" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Property Calculator: Cash Flow, ROI & Cap Rate | RentalDealMath</title>
+<meta name="description" content="Free rental property calculator. Enter a deal once to see monthly cash flow, cash-on-cash return, cap rate, DSCR, break-even rent, a stress test and a 10-year projection. No sign-up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Layout: left column = inputs (sticky on desktop), right column = verdict, key numbers, breakdown, stress test, projection. Stacks on phones. */
+:root{
+  --bg:#f4f5f2;
+  --surface:#ffffff;
+  --ink:#16201d;
+  --muted:#5d6b66;
+  --line:#dde2dd;
+  --accent:#0d6b5c;
+  --accent-soft:#e2f0ec;
+  --good:#11845b; --good-bg:#e3f4ec;
+  --warn:#a86a00; --warn-bg:#fbf0d9;
+  --bad:#b4322a; --bad-bg:#f9e4e1;
+  --c1:#0d6b5c; --c2:#4f8fbf; --c3:#c08a2c; --c4:#8a6fb3; --c5:#c8574d; --c6:#7b8a85; --c7:#3fa38a;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Figtree", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1513; --surface:#17201d; --ink:#e6ece9; --muted:#97a6a0; --line:#2a3632;
+    --accent:#4cc3a7; --accent-soft:#163029;
+    --good:#4cc38c; --good-bg:#14301f; --warn:#e3b04f; --warn-bg:#33270f; --bad:#ef7a70; --bad-bg:#3a1a17;
+    --c1:#4cc3a7; --c2:#6fa9d6; --c3:#d9a64a; --c4:#a68ccc; --c5:#e07a70; --c6:#7f908a; --c7:#2f8e78;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1513; --surface:#17201d; --ink:#e6ece9; --muted:#97a6a0; --line:#2a3632;
+  --accent:#4cc3a7; --accent-soft:#163029;
+  --good:#4cc38c; --good-bg:#14301f; --warn:#e3b04f; --warn-bg:#33270f; --bad:#ef7a70; --bad-bg:#3a1a17;
+  --c1:#4cc3a7; --c2:#6fa9d6; --c3:#d9a64a; --c4:#a68ccc; --c5:#e07a70; --c6:#7f908a; --c7:#2f8e78;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 20px}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:22px}
+h1{font:700 clamp(28px,4vw,40px)/1.1 var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--muted);margin:6px 0 0;max-width:62ch}
+.btn{font:600 14px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 14px;border-radius:8px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+
+.grid{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:22px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+.grid>*{min-width:0}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.inputs{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}
+@media (max-width:900px){.inputs{position:static;max-height:none}}
+fieldset{border:0;margin:0 0 16px;padding:0;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
+legend{font:600 12px var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:0;margin-bottom:8px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-size:13px;color:var(--muted)}
+.inp{display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;background:var(--bg);padding:0 10px}
+.inp:focus-within{border-color:var(--accent)}
+.inp span{color:var(--muted);font-size:14px}
+.inp input{border:0;background:transparent;color:var(--ink);font:500 15px var(--mono);padding:8px 4px;width:100%;min-width:0;font-variant-numeric:tabular-nums}
+.inp input:focus{outline:none}
+.hint{font-size:12px;color:var(--muted)}
+details.more{grid-column:1/-1}
+details.more summary{cursor:pointer;font-size:13px;color:var(--accent);font-weight:600}
+
+.results{display:flex;flex-direction:column;gap:18px}
+.verdict{display:flex;gap:16px;align-items:flex-start;border-left:5px solid var(--muted)}
+.verdict.good{border-left-color:var(--good)} .verdict.warn{border-left-color:var(--warn)} .verdict.bad{border-left-color:var(--bad)}
+.pill{display:inline-block;font:700 13px var(--body);padding:4px 10px;border-radius:99px;white-space:nowrap}
+.pill.good{background:var(--good-bg);color:var(--good)} .pill.warn{background:var(--warn-bg);color:var(--warn)} .pill.bad{background:var(--bad-bg);color:var(--bad)}
+.verdict h2{font:700 22px/1.25 var(--display);margin:6px 0 6px;text-wrap:balance}
+.verdict p{margin:0;color:var(--muted);max-width:68ch}
+.verdict ul{margin:8px 0 0;padding-left:18px;color:var(--ink)}
+.verdict li{margin:2px 0}
+
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:640px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.tile .k{font-size:13px;color:var(--muted)}
+.tile .v{font:600 26px/1.2 var(--mono);margin-top:4px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tile .s{font-size:12px;color:var(--muted);margin-top:2px}
+.pos{color:var(--good)} .neg{color:var(--bad)}
+
+h3{font:700 18px var(--display);margin:0 0 4px}
+.panel .lead{color:var(--muted);font-size:14px;margin:0 0 14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+@media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{padding:10px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column}
+.stat .k{font-size:13px;color:var(--muted)}
+.stat .v{font:500 17px var(--mono);font-variant-numeric:tabular-nums}
+
+.bar{display:flex;height:28px;border-radius:6px;overflow:hidden;background:var(--bg);margin:6px 0 12px}
+.bar div{height:100%;min-width:2px}
+.legend{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 18px;font-size:14px}
+@media (max-width:520px){.legend{grid-template-columns:1fr}}
+.legend .row{display:flex;align-items:center;gap:8px}
+.legend .sw{width:10px;height:10px;border-radius:2px;flex:none}
+.legend .amt{margin-left:auto;font:500 14px var(--mono);font-variant-numeric:tabular-nums}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:right;padding:9px 8px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+td.num{font-family:var(--mono)}
+.tablewrap{overflow-x:auto}
+
+.chartwrap{position:relative;width:100%;height:280px}
+canvas{width:100%;height:100%;display:block}
+.chartlegend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:8px}
+.chartlegend span{display:inline-flex;align-items:center;gap:6px}
+.chartlegend i{width:12px;height:12px;border-radius:2px;display:inline-block}
+
+.explain{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}
+@media (max-width:640px){.explain{grid-template-columns:1fr}}
+.explain details{border-bottom:1px solid var(--line);padding:10px 0}
+.explain summary{cursor:pointer;font-weight:600}
+.explain p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion: reduce){.toast{transition:none}}
+</style>
+<link rel="canonical" href="https://rentaldealmath.com/rental-property-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RentalDealMath">
+<meta property="og:title" content="Rental Property Calculator: Cash Flow, ROI & Cap Rate | RentalDealMath">
+<meta property="og:description" content="Free rental property calculator. Enter a deal once to see monthly cash flow, cash-on-cash return, cap rate, DSCR, break-even rent, a stress test and a 10-year projection. No sign-up.">
+<meta property="og:url" content="https://rentaldealmath.com/rental-property-calculator/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Rental Property Calculator", "url": "https://rentaldealmath.com/rental-property-calculator/", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Free rental property calculator. Enter a deal once to see monthly cash flow, cash-on-cash return, cap rate, DSCR, break-even rent, a stress test and a 10-year projection. No sign-up."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a good cash flow for a rental property?", "acceptedAnswer": {"@type": "Answer", "text": "Many investors look for at least $100 to $200 a month per unit after every expense, including repairs, vacancy and a reserve for big-ticket items. What matters most is that the property stays profitable when rent drops or costs rise, which is what the stress test shows."}}, {"@type": "Question", "name": "What is a good cash-on-cash return?", "acceptedAnswer": {"@type": "Answer", "text": "Many investors aim for 8% or more. Below 4% the margin is thin. Compare it with what your cash could earn elsewhere, and remember appreciation and loan paydown add to your total return."}}, {"@type": "Question", "name": "What is a good cap rate?", "acceptedAnswer": {"@type": "Answer", "text": "Cap rates often fall between 4% and 10% depending on the market. Higher cap rates usually mean more income relative to price but can come with more risk or a weaker location."}}, {"@type": "Question", "name": "What is the 1% rule?", "acceptedAnswer": {"@type": "Answer", "text": "A quick screen: monthly rent should be at least 1% of the purchase price. It is hard to meet in expensive markets, so treat it as a rough filter rather than a verdict."}}, {"@type": "Question", "name": "How much should I budget for repairs and vacancy?", "acceptedAnswer": {"@type": "Answer", "text": "A common starting point is 5% of rent for repairs, 5% for big-ticket replacements like roofs and HVAC, and 5% to 8% for vacancy. Older properties usually need more."}}]}</script>
+</head>
+<body>
+<header class="site-header"><div class="in"><a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M7 15.5 16 8l9 7.5" fill="none" stroke="var(--surface)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 19h10M11 23.5h10" stroke="var(--surface)" stroke-width="2.4" stroke-linecap="round"/></svg><span>RentalDeal<b>Math</b></span></a><nav class="site-nav" aria-label="Main"><a href="/rental-property-calculator/" aria-current="page">Rental Property</a><a href="/mortgage-calculator/">Mortgage</a><a href="/cap-rate-calculator/">Cap Rate</a><a href="/brrrr-calculator/">BRRRR</a><a href="/rental-vs-airbnb-calculator/">Airbnb vs Rent</a><a href="/rent-vs-buy-calculator/">Rent vs Buy</a><a href="/rent-ledger-template/">Rent Ledger</a><a href="/about/">About</a></nav></div></header>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Rental Property Calculator</h1>
+      <p class="sub">Enter a property's numbers once. See whether it pays for itself, what you earn on your cash, and how it could grow over 10 years. Free, no sign-up.</p>
+    </div>
+    <div class="actions">
+      <button class="btn" id="resetBtn" type="button">Load example</button>
+      <button class="btn primary" id="copyBtn" type="button">Copy summary</button>
+    </div>
+  </header>
+
+  <div class="grid">
+    <form class="panel inputs" id="form" autocomplete="off">
+      <fieldset>
+        <legend>Purchase</legend>
+        <div class="field full"><label for="price">Purchase price</label><div class="inp"><span>$</span><input id="price" inputmode="decimal"></div></div>
+        <div class="field"><label for="downPct">Down payment</label><div class="inp"><input id="downPct" inputmode="decimal"><span>%</span></div></div>
+        <div class="field"><label for="closing">Closing costs</label><div class="inp"><span>$</span><input id="closing" inputmode="decimal"></div></div>
+        <div class="field full"><label for="rehab">Repairs before renting</label><div class="inp"><span>$</span><input id="rehab" inputmode="decimal"></div></div>
+      </fieldset>
+      <fieldset>
+        <legend>Loan</legend>
+        <div class="field"><label for="rate">Interest rate</label><div class="inp"><input id="rate" inputmode="decimal"><span>%</span></div></div>
+        <div class="field"><label for="term">Term</label><div class="inp"><input id="term" inputmode="numeric"><span>yrs</span></div></div>
+      </fieldset>
+      <fieldset>
+        <legend>Income</legend>
+        <div class="field"><label for="rent">Monthly rent</label><div class="inp"><span>$</span><input id="rent" inputmode="decimal"></div></div>
+        <div class="field"><label for="other">Other income /mo</label><div class="inp"><span>$</span><input id="other" inputmode="decimal"></div><span class="hint">Parking, laundry, pets</span></div>
+      </fieldset>
+      <fieldset>
+        <legend>Expenses</legend>
+        <div class="field"><label for="tax">Property tax /yr</label><div class="inp"><span>$</span><input id="tax" inputmode="decimal"></div></div>
+        <div class="field"><label for="ins">Insurance /yr</label><div class="inp"><span>$</span><input id="ins" inputmode="decimal"></div></div>
+        <div class="field"><label for="hoa">HOA /mo</label><div class="inp"><span>$</span><input id="hoa" inputmode="decimal"></div></div>
+        <div class="field"><label for="util">Utilities you pay /mo</label><div class="inp"><span>$</span><input id="util" inputmode="decimal"></div></div>
+        <div class="field"><label for="vac">Vacancy</label><div class="inp"><input id="vac" inputmode="decimal"><span>%</span></div><span class="hint">5% ≈ 18 empty days a year</span></div>
+        <div class="field"><label for="mgmt">Management</label><div class="inp"><input id="mgmt" inputmode="decimal"><span>%</span></div><span class="hint">0 if you self-manage</span></div>
+        <div class="field"><label for="maint">Repairs</label><div class="inp"><input id="maint" inputmode="decimal"><span>%</span></div><span class="hint">Of rent</span></div>
+        <div class="field"><label for="capex">Big-ticket reserve</label><div class="inp"><input id="capex" inputmode="decimal"><span>%</span></div><span class="hint">Roof, HVAC, appliances</span></div>
+      </fieldset>
+      <fieldset>
+        <legend>Growth (for the 10-year view)</legend>
+        <div class="field"><label for="appr">Home value growth /yr</label><div class="inp"><input id="appr" inputmode="decimal"><span>%</span></div></div>
+        <div class="field"><label for="rentg">Rent growth /yr</label><div class="inp"><input id="rentg" inputmode="decimal"><span>%</span></div></div>
+        <div class="field"><label for="expg">Expense growth /yr</label><div class="inp"><input id="expg" inputmode="decimal"><span>%</span></div></div>
+      </fieldset>
+    </form>
+
+    <main class="results">
+      <section class="panel verdict" id="verdict" aria-live="polite">
+        <div>
+          <span class="pill" id="vPill">–</span>
+          <h2 id="vTitle">–</h2>
+          <p id="vText"></p>
+          <ul id="vList"></ul>
+        </div>
+      </section>
+
+      <section class="tiles" aria-label="Key numbers">
+        <div class="tile"><div class="k">Monthly cash flow</div><div class="v" id="tCF">–</div><div class="s" id="tCFs"></div></div>
+        <div class="tile"><div class="k">Cash-on-cash return</div><div class="v" id="tCoC">–</div><div class="s">Yearly profit ÷ your cash</div></div>
+        <div class="tile"><div class="k">Cap rate</div><div class="v" id="tCap">–</div><div class="s">Profit before mortgage ÷ price</div></div>
+        <div class="tile"><div class="k">Gross rental yield</div><div class="v" id="tYield">–</div><div class="s">Yearly rent ÷ price</div></div>
+      </section>
+
+      <section class="panel">
+        <h3>Where each month's rent goes</h3>
+        <p class="lead" id="barLead"></p>
+        <div class="bar" id="bar" role="img" aria-label="Breakdown of monthly income"></div>
+        <div class="legend" id="legend"></div>
+      </section>
+
+      <section class="panel">
+        <h3>More numbers</h3>
+        <p class="lead">What lenders and experienced investors check.</p>
+        <div class="stats" id="stats"></div>
+      </section>
+
+      <section class="panel">
+        <h3>Stress test</h3>
+        <p class="lead">How the deal holds up if things go worse than planned.</p>
+        <div class="tablewrap"><table id="stress"><thead><tr><th>Scenario</th><th>Cash flow /mo</th><th>Cash-on-cash</th><th>Result</th></tr></thead><tbody></tbody></table></div>
+      </section>
+
+      <section class="panel">
+        <h3>10-year projection</h3>
+        <p class="lead" id="projLead"></p>
+        <div class="chartwrap"><canvas id="chart" role="img" aria-label="Equity and cumulative cash flow over 10 years"></canvas></div>
+        <div class="chartlegend"><span><i style="background:var(--c2)"></i>Equity in the home</span><span><i style="background:var(--c1)"></i>Total cash flow received</span></div>
+        <div class="tablewrap" style="margin-top:14px"><table id="proj"><thead><tr><th>Year</th><th>Home value</th><th>Loan left</th><th>Equity</th><th>Cash flow that year</th><th>Total return</th></tr></thead><tbody></tbody></table></div>
+      </section>
+
+      <section class="panel">
+        <h3>What these numbers mean</h3>
+        <div class="explain">
+          <details><summary>Cash flow</summary><p>Money left each month after rent comes in and every cost goes out, including the mortgage. Negative means you pay out of pocket to keep the property.</p></details>
+          <details><summary>Cash-on-cash return</summary><p>Your yearly cash flow divided by the cash you put in (down payment, closing costs, repairs). Many investors look for 8% or more. Compare it to what your cash could earn elsewhere.</p></details>
+          <details><summary>Cap rate</summary><p>Net operating income (rent minus running costs, before the mortgage) divided by the price. It compares properties no matter how they're financed. Higher usually means more income but often a riskier area.</p></details>
+          <details><summary>DSCR</summary><p>Debt service coverage ratio: net operating income divided by yearly mortgage payments. Lenders for rental loans usually want 1.2 to 1.25 or higher.</p></details>
+          <details><summary>Break-even rent</summary><p>The lowest monthly rent at which the property covers all its costs. The bigger the gap between your rent and this number, the safer the deal.</p></details>
+          <details><summary>1% rule</summary><p>A quick screen: monthly rent at least 1% of the price. Hard to hit in expensive cities, so treat it as a rough filter, not a verdict.</p></details>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+<article class="page" style="max-width:1180px;padding-top:12px">
+<div style="max-width:760px">
+<h2>How to use this rental property calculator</h2>
+<ol>
+<li><strong>Enter the purchase details:</strong> price, down payment, closing costs and any repairs needed before renting.</li>
+<li><strong>Add your loan:</strong> interest rate and term. Investment property rates are usually higher than rates for a home you live in.</li>
+<li><strong>Enter the rent</strong> you expect, based on similar rentals nearby, plus any other income such as parking or laundry.</li>
+<li><strong>Fill in expenses:</strong> property tax, insurance, HOA, and percentages for vacancy, management, repairs and big-ticket replacements.</li>
+<li><strong>Read the verdict, then check the stress test</strong> to see whether the deal survives lower rent, higher rates or more vacancy.</li>
+</ol>
+<h2>How we calculate the results</h2>
+<p>These are the formulas behind every number, so you can check the math yourself.</p>
+<h3>Net operating income (NOI)</h3>
+<p class="formula">NOI = (rent + other income − vacancy) − operating expenses</p>
+<p>Operating expenses include property tax, insurance, HOA, utilities you pay, management, repairs and the big-ticket reserve. They do not include the mortgage.</p>
+<h3>Cash flow</h3>
+<p class="formula">Monthly cash flow = monthly NOI − mortgage payment</p>
+<h3>Cash-on-cash return</h3>
+<p class="formula">Cash-on-cash = yearly cash flow ÷ (down payment + closing costs + repairs)</p>
+<h3>Cap rate</h3>
+<p class="formula">Cap rate = yearly NOI ÷ purchase price</p>
+<h3>Debt service coverage ratio (DSCR)</h3>
+<p class="formula">DSCR = yearly NOI ÷ yearly mortgage payments</p>
+<h3>Break-even rent</h3>
+<p>The monthly rent at which cash flow is exactly zero, after vacancy, percentage-based costs and the mortgage.</p>
+<h3>10-year projection</h3>
+<p>Each year, rent grows at your rent growth rate, fixed expenses at your expense growth rate, and the home's value at your value growth rate. Equity is the home's value minus the remaining loan balance. Total return is the equity gained beyond your down payment plus all cash flow received.</p>
+<h2>Frequently asked questions</h2>
+<h3>What is a good cash flow for a rental property?</h3>
+<p>Many investors look for at least $100 to $200 a month per unit after every expense, including repairs, vacancy and a reserve for big-ticket items. What matters most is that the property stays profitable when rent drops or costs rise, which is what the stress test shows.</p>
+<h3>What is a good cash-on-cash return?</h3>
+<p>Many investors aim for 8% or more. Below 4% the margin is thin. Compare it with what your cash could earn elsewhere, and remember appreciation and loan paydown add to your total return.</p>
+<h3>What is a good cap rate?</h3>
+<p>Cap rates often fall between 4% and 10% depending on the market. Higher cap rates usually mean more income relative to price but can come with more risk or a weaker location.</p>
+<h3>What is the 1% rule?</h3>
+<p>A quick screen: monthly rent should be at least 1% of the purchase price. It is hard to meet in expensive markets, so treat it as a rough filter rather than a verdict.</p>
+<h3>How much should I budget for repairs and vacancy?</h3>
+<p>A common starting point is 5% of rent for repairs, 5% for big-ticket replacements like roofs and HVAC, and 5% to 8% for vacancy. Older properties usually need more.</p>
+
+</div>
+</article>
+
+<footer class="site-footer"><div class="in">
+<div><a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M7 15.5 16 8l9 7.5" fill="none" stroke="var(--surface)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 19h10M11 23.5h10" stroke="var(--surface)" stroke-width="2.4" stroke-linecap="round"/></svg><span>RentalDeal<b>Math</b></span></a>
+<p style="margin-top:10px">Free calculators that help you decide whether a rental property is worth buying.</p>
+<p>Estimates for planning only. Not financial, tax or legal advice.</p></div>
+<div><h4>Tools</h4><ul><li><a href="/rental-property-calculator/">Rental property calculator</a></li><li><a href="/mortgage-calculator/">Mortgage calculator</a></li><li><a href="/rent-vs-buy-calculator/">Rent vs buy</a></li><li><a href="/rent-ledger-template/">Rent ledger template</a></li></ul></div>
+<div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li>
+<li><a href="/privacy/">Privacy policy</a></li><li><a href="/terms/">Terms of use</a></li></ul></div>
+</div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  const EXAMPLE = {price:200000, downPct:25, closing:6000, rehab:5000, rate:7.0, term:30, rent:2000, other:0,
+    tax:2400, ins:1300, hoa:0, util:0, vac:5, mgmt:8, maint:5, capex:5, appr:3, rentg:3, expg:2.5};
+  const ids = Object.keys(EXAMPLE);
+  const $ = id => document.getElementById(id);
+
+  const fmt0 = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+  const money = v => (v<0?'−':'') + fmt0.format(Math.abs(v)).replace('-','');
+  const signed = v => (v>0?'+':'') + money(v);
+  const pct = (v,d=1) => isFinite(v) ? (v<0?'−':'') + Math.abs(v*100).toFixed(d) + '%' : '–';
+
+  function setInputs(o){ ids.forEach(k => { $(k).value = Number(o[k]).toLocaleString('en-US',{maximumFractionDigits:2}); }); }
+  function num(id){ const v = parseFloat(String($(id).value).replace(/[^0-9.\-]/g,'')); return isFinite(v) ? v : 0; }
+  function read(){ const o={}; ids.forEach(k=>o[k]=num(k)); return o; }
+
+  function payment(P, annualRate, years){
+    const n = years*12, r = annualRate/100/12;
+    if(P<=0 || n<=0) return 0;
+    if(r===0) return P/n;
+    return P*r/(1-Math.pow(1+r,-n));
+  }
+  function balance(P, annualRate, years, months){
+    const r = annualRate/100/12, pmt = payment(P,annualRate,years);
+    if(months >= years*12) return 0;
+    if(r===0) return Math.max(0, P - pmt*months);
+    return Math.max(0, P*Math.pow(1+r,months) - pmt*(Math.pow(1+r,months)-1)/r);
+  }
+
+  // Core model. All monthly unless noted.
+  function analyze(d){
+    const loan = d.price*(1-d.downPct/100);
+    const cash = d.price*d.downPct/100 + d.closing + d.rehab;
+    const pmt = payment(loan, d.rate, d.term);
+    const gross = d.rent + d.other;
+    const vacancy = gross*d.vac/100;
+    const collected = gross - vacancy;
+    const mgmt = collected*d.mgmt/100;
+    const maint = d.rent*d.maint/100;
+    const capex = d.rent*d.capex/100;
+    const fixed = d.tax/12 + d.ins/12 + d.hoa + d.util;
+    const opex = fixed + mgmt + maint + capex;
+    const noi = collected - opex;              // monthly
+    const cf = noi - pmt;
+    const annCF = cf*12, annNOI = noi*12, annDS = pmt*12;
+    // Break-even rent: CF is linear in rent.
+    const v=d.vac/100, mg=d.mgmt/100, mc=(d.maint+d.capex)/100;
+    const slope = (1-v)*(1-mg) - mc;
+    const breakEven = slope>0 ? (fixed + pmt - d.other*(1-v)*(1-mg))/slope : Infinity;
+    return {
+      loan, cash, pmt, gross, vacancy, collected, mgmt, maint, capex, fixed, opex, noi, cf,
+      tax:d.tax/12, ins:d.ins/12, hoa:d.hoa, util:d.util,
+      coc: cash>0 ? annCF/cash : NaN,
+      cap: d.price>0 ? annNOI/d.price : NaN,
+      gy: d.price>0 ? d.rent*12/d.price : NaN,
+      ny: (d.price+d.closing+d.rehab)>0 ? annNOI/(d.price+d.closing+d.rehab) : NaN,
+      dscr: annDS>0 ? annNOI/annDS : Infinity,
+      breakEven, onePct: d.price>0 ? d.rent/d.price : NaN,
+      grm: d.rent>0 ? d.price/(d.rent*12) : NaN,
+      expRatio: collected>0 ? opex/collected : NaN
+    };
+  }
+
+  function project(d){
+    const rows=[]; let cum=0;
+    const base = analyze(d);
+    for(let y=1;y<=10;y++){
+      const g = k => Math.pow(1+k/100, y-1);
+      const rent = d.rent*g(d.rentg), other = d.other*g(d.rentg);
+      const gross = rent+other, collected = gross*(1-d.vac/100);
+      const opex = (d.tax/12+d.ins/12+d.hoa+d.util)*g(d.expg) + collected*d.mgmt/100 + rent*(d.maint+d.capex)/100;
+      const cf = (collected - opex - base.pmt)*12;
+      cum += cf;
+      const value = d.price*Math.pow(1+d.appr/100, y);
+      const bal = balance(base.loan, d.rate, d.term, y*12);
+      const equity = value - bal;
+      const totalReturn = (equity - (d.price - base.loan)) + cum; // equity gained beyond down payment + cash received
+      rows.push({y, value, bal, equity, cf, cum, totalReturn});
+    }
+    return rows;
+  }
+
+  function verdict(a){
+    if(a.cf < 0) return {cls:'bad', pill:'Loses money', title:`This property costs you about ${money(-a.cf)} a month to hold.`,
+      text:'Rent does not cover the mortgage and running costs. It only works if you are betting on the home rising in value, which is a much riskier plan.'};
+    if(a.coc < 0.04) return {cls:'warn', pill:'Thin margin', title:`It pays for itself, but only just: ${money(a.cf)} a month.`,
+      text:'One empty month or a big repair could wipe out a year of profit. Try a lower price, a bigger down payment or a higher rent.'};
+    if(a.coc < 0.08 || a.dscr < 1.25) return {cls:'warn', pill:'Decent', title:`A workable deal with ${money(a.cf)} a month in cash flow.`,
+      text:'It earns money, though below the 8% cash-on-cash many investors aim for. It can still make sense if the area is likely to grow.'};
+    return {cls:'good', pill:'Strong', title:`A strong deal: ${money(a.cf)} a month and ${pct(a.coc)} on your cash.`,
+      text:'The rent comfortably covers the mortgage and costs, with room for surprises. Double-check the rent and expense figures before you trust it.'};
+  }
+
+  function reasons(d,a){
+    const r=[];
+    if(isFinite(a.breakEven)) r.push(`Break-even rent is ${money(a.breakEven)}, so rent can drop ${a.breakEven<d.rent ? money(d.rent-a.breakEven)+' before you lose money' : 'nowhere: you are already below it'}.`);
+    if(isFinite(a.dscr)) r.push(a.dscr>=1.25 ? `DSCR of ${a.dscr.toFixed(2)} is above the 1.25 most rental lenders want.` : `DSCR of ${a.dscr.toFixed(2)} is below the 1.25 most rental lenders want, which can make financing harder.`);
+    r.push(a.onePct>=0.01 ? `Rent is ${pct(a.onePct,2)} of the price, so it passes the 1% rule.` : `Rent is ${pct(a.onePct,2)} of the price, under the 1% rule of thumb.`);
+    if(d.mgmt===0) r.push('No management fee included. Add 8–10% if you won’t manage it yourself.');
+    return r;
+  }
+
+  const colorVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+  function render(){
+    const d = read(), a = analyze(d), v = verdict(a);
+    const vEl = $('verdict'); vEl.className = 'panel verdict ' + v.cls;
+    $('vPill').className = 'pill ' + v.cls; $('vPill').textContent = v.pill;
+    $('vTitle').textContent = v.title; $('vText').textContent = v.text;
+    $('vList').innerHTML = reasons(d,a).map(t=>`<li>${t}</li>`).join('');
+
+    const cfEl=$('tCF'); cfEl.textContent = money(a.cf); cfEl.className='v '+(a.cf>=0?'pos':'neg');
+    $('tCFs').textContent = `${signed(a.cf*12)} a year`;
+    const cocEl=$('tCoC'); cocEl.textContent=pct(a.coc); cocEl.className='v '+(a.coc>=0?'':'neg');
+    $('tCap').textContent=pct(a.cap); $('tYield').textContent=pct(a.gy);
+
+    // Breakdown bar
+    const parts = [
+      ['Mortgage', a.pmt, '--c2'], ['Property tax', a.tax, '--c3'], ['Insurance', a.ins, '--c4'],
+      ['Vacancy', a.vacancy, '--c6'], ['Management', a.mgmt, '--c5'], ['Repairs & reserve', a.maint+a.capex, '--c7'],
+      ['HOA & utilities', a.hoa+a.util, '--c6']
+    ].filter(p=>p[1]>0.5);
+    const out = parts.reduce((s,p)=>s+p[1],0);
+    const total = Math.max(a.gross, out);
+    let segs = parts.map(p=>`<div style="width:${p[1]/total*100}%;background:var(${p[2]})" title="${p[0]}"></div>`).join('');
+    if(a.cf>0) segs += `<div style="width:${a.cf/total*100}%;background:var(--c1)" title="Cash flow"></div>`;
+    $('bar').innerHTML = segs;
+    $('barLead').textContent = a.cf>=0
+      ? `Of ${money(a.gross)} coming in, ${money(a.cf)} is left for you.`
+      : `Costs of ${money(out)} are more than the ${money(a.gross)} coming in.`;
+    let leg = parts.map(p=>`<div class="row"><span class="sw" style="background:var(${p[2]})"></span>${p[0]}<span class="amt">${money(p[1])}</span></div>`).join('');
+    leg += `<div class="row"><span class="sw" style="background:${a.cf>=0?'var(--c1)':'var(--bad)'}"></span><strong>${a.cf>=0?'Cash flow to you':'Shortfall you pay'}</strong><span class="amt ${a.cf>=0?'pos':'neg'}">${money(a.cf)}</span></div>`;
+    $('legend').innerHTML = leg;
+
+    const stats = [
+      ['Cash you need', money(a.cash)], ['Loan amount', money(a.loan)], ['Mortgage payment', money(a.pmt)+'/mo'],
+      ['Net operating income', money(a.noi*12)+'/yr'], ['DSCR', isFinite(a.dscr)?a.dscr.toFixed(2):'No loan'], ['Break-even rent', isFinite(a.breakEven)?money(a.breakEven):'–'],
+      ['Net yield', pct(a.ny)], ['Expense ratio', pct(a.expRatio,0)], ['Price-to-rent (GRM)', isFinite(a.grm)?a.grm.toFixed(1)+'×':'–']
+    ];
+    $('stats').innerHTML = stats.map(s=>`<div class="stat"><span class="k">${s[0]}</span><span class="v">${s[1]}</span></div>`).join('');
+
+    // Stress test
+    const scen = [
+      ['As entered', {}],
+      ['Rent 10% lower', {rent:d.rent*0.9}],
+      ['Rate 1 point higher', {rate:d.rate+1}],
+      ['Vacancy 10%', {vac:10}],
+      ['Repairs double', {maint:d.maint*2}],
+      ['All of the above', {rent:d.rent*0.9, rate:d.rate+1, vac:10, maint:d.maint*2}]
+    ];
+    $('stress').querySelector('tbody').innerHTML = scen.map(([name,ch])=>{
+      const s = analyze(Object.assign({}, d, ch));
+      const ok = s.cf>=0;
+      return `<tr><td>${name}</td><td class="num ${ok?'pos':'neg'}">${money(s.cf)}</td><td class="num">${pct(s.coc)}</td><td><span class="pill ${ok?'good':'bad'}">${ok?'Still profitable':'Loses money'}</span></td></tr>`;
+    }).join('');
+
+    // Projection
+    const rows = project(d);
+    const last = rows[9];
+    $('projLead').textContent = `With ${d.appr}% yearly value growth and ${d.rentg}% rent growth, after 10 years you'd have about ${money(last.equity)} in equity and ${money(last.cum)} in total cash flow, a total gain of ${money(last.totalReturn)} on ${money(a.cash)} invested.`;
+    $('proj').querySelector('tbody').innerHTML = rows.filter(r=>[1,2,3,5,7,10].includes(r.y)).map(r=>
+      `<tr><td>${r.y}</td><td class="num">${money(r.value)}</td><td class="num">${money(r.bal)}</td><td class="num">${money(r.equity)}</td><td class="num ${r.cf>=0?'':'neg'}">${money(r.cf)}</td><td class="num">${money(r.totalReturn)}</td></tr>`).join('');
+    drawChart(rows);
+    lastState = {d,a,v,rows};
+  }
+
+  function niceMax(v){ if(v<=0) return 1; const p=Math.pow(10,Math.floor(Math.log10(v))); const n=v/p; return (n<=1?1:n<=2?2:n<=5?5:10)*p; }
+  function short(v){ const s=v<0?'−':''; v=Math.abs(v); return s+'$'+(v>=1e6?(v/1e6).toFixed(1)+'M':v>=1e3?Math.round(v/1e3)+'k':Math.round(v)); }
+
+  function drawChart(rows){
+    const cv=$('chart'), box=cv.parentElement, dpr=window.devicePixelRatio||1;
+    const W=box.clientWidth, H=box.clientHeight;
+    cv.width=W*dpr; cv.height=H*dpr; const c=cv.getContext('2d'); c.setTransform(dpr,0,0,dpr,0,0); c.clearRect(0,0,W,H);
+    const ink=colorVar('--muted'), line=colorVar('--line'), c1=colorVar('--c1'), c2=colorVar('--c2'), font=colorVar('--body');
+    const L=54,R=12,T=12,B=28, pw=W-L-R, ph=H-T-B;
+    const maxV = niceMax(Math.max(...rows.map(r=>r.equity), ...rows.map(r=>r.cum), 1));
+    const minV = Math.min(0, ...rows.map(r=>r.cum));
+    const minN = minV<0 ? -niceMax(-minV) : 0;
+    const y = v => T + ph*(1-(v-minN)/(maxV-minN));
+    c.font = `12px ${font}`; c.fillStyle=ink; c.strokeStyle=line; c.lineWidth=1;
+    const steps=4;
+    for(let i=0;i<=steps;i++){ const v=minN+(maxV-minN)*i/steps, yy=Math.round(y(v))+.5; c.beginPath(); c.moveTo(L,yy); c.lineTo(W-R,yy); c.stroke(); c.textAlign='right'; c.textBaseline='middle'; c.fillText(short(v), L-8, yy); }
+    const slot=pw/rows.length, bw=Math.min(26, slot*0.5);
+    rows.forEach((r,i)=>{
+      const x=L+slot*i+slot/2;
+      c.fillStyle=c1; const y0=y(0), y1=y(r.cum); c.globalAlpha=.85; c.fillRect(x-bw/2, Math.min(y0,y1), bw, Math.max(1,Math.abs(y1-y0))); c.globalAlpha=1;
+      c.fillStyle=ink; c.textAlign='center'; c.textBaseline='top'; c.fillText('Y'+r.y, x, H-B+8);
+    });
+    // equity area + line
+    c.beginPath(); rows.forEach((r,i)=>{ const x=L+slot*i+slot/2; i?c.lineTo(x,y(r.equity)):c.moveTo(x,y(r.equity)); });
+    c.lineTo(L+slot*(rows.length-1)+slot/2, y(Math.max(0,minN))); c.lineTo(L+slot/2, y(Math.max(0,minN))); c.closePath();
+    c.fillStyle=c2; c.globalAlpha=.12; c.fill(); c.globalAlpha=1;
+    c.beginPath(); rows.forEach((r,i)=>{ const x=L+slot*i+slot/2; i?c.lineTo(x,y(r.equity)):c.moveTo(x,y(r.equity)); });
+    c.strokeStyle=c2; c.lineWidth=2.5; c.stroke();
+    const lx=L+slot*(rows.length-1)+slot/2, ly=y(rows[9].equity);
+    c.beginPath(); c.arc(lx,ly,4.5,0,Math.PI*2); c.fillStyle=c2; c.fill();
+    c.fillStyle=colorVar('--ink'); c.textAlign='right'; c.textBaseline='bottom'; c.font=`600 12px ${font}`; c.fillText(short(rows[9].equity), lx-8, ly-6);
+  }
+
+  let lastState=null;
+  function summary(){
+    const {d,a,v,rows}=lastState;
+    return [
+      `Rental deal analysis: ${money(d.price)} property, ${money(d.rent)}/mo rent`,
+      `Verdict: ${v.pill}`,
+      `Monthly cash flow: ${money(a.cf)} (${signed(a.cf*12)}/yr)`,
+      `Cash-on-cash return: ${pct(a.coc)}`,
+      `Cap rate: ${pct(a.cap)} | Gross yield: ${pct(a.gy)} | DSCR: ${isFinite(a.dscr)?a.dscr.toFixed(2):'n/a'}`,
+      `Cash needed: ${money(a.cash)} | Mortgage: ${money(a.pmt)}/mo at ${d.rate}% for ${d.term} yrs`,
+      `Break-even rent: ${isFinite(a.breakEven)?money(a.breakEven):'n/a'}`,
+      `10-year estimate: ${money(rows[9].equity)} equity, ${money(rows[9].cum)} total cash flow`
+    ].join('\n');
+  }
+  function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove('show'),2200); }
+
+  $('copyBtn').addEventListener('click', async ()=>{
+    try{ await navigator.clipboard.writeText(summary()); toast('Summary copied'); }
+    catch(e){ toast('Copy was blocked by your browser'); }
+  });
+  $('resetBtn').addEventListener('click', ()=>{ setInputs(EXAMPLE); render(); toast('Example loaded'); });
+  $('form').addEventListener('input', render);
+  $('form').addEventListener('submit', e=>e.preventDefault());
+  let rt; window.addEventListener('resize', ()=>{ clearTimeout(rt); rt=setTimeout(()=>lastState&&drawChart(lastState.rows),120); });
+  if(window.matchMedia){ window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', ()=>lastState&&drawChart(lastState.rows)); }
+  new MutationObserver(()=>lastState&&drawChart(lastState.rows)).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+  setInputs(EXAMPLE);
+  render();
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>lastState&&drawChart(lastState.rows));
+})();
+</script>
+<div id="cc" role="dialog" aria-label="Cookie consent" hidden style="position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:560px;margin:0 auto;background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--line,#ddd);border-radius:12px;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.18);font:14px/1.5 system-ui,sans-serif">
+<p style="margin:0 0 10px">We use cookies to measure traffic and, later, to show ads. See our <a href="/privacy/">privacy policy</a>.</p>
+<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" data-c="no" style="padding:8px 14px;border-radius:8px;border:1px solid var(--line,#ccc);background:transparent;color:inherit;cursor:pointer">Reject</button><button type="button" data-c="yes" style="padding:8px 14px;border-radius:8px;border:0;background:var(--accent,#2457d6);color:#fff;cursor:pointer">Accept</button></div></div>
+<script>
+(function(){try{var tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';if(!/^(Europe\/|Atlantic\/(Reykjavik|Canary|Madeira|Faroe))/.test(tz)||localStorage.getItem('ff_consent'))return;}catch(e){return;}
+var b=document.getElementById('cc');b.hidden=false;b.addEventListener('click',function(e){var v=e.target.getAttribute&&e.target.getAttribute('data-c');if(!v)return;try{localStorage.setItem('ff_consent',v)}catch(x){}var g=v==='yes'?'granted':'denied';gtag('consent','update',{ad_storage:g,ad_user_data:g,ad_personalization:g,analytics_storage:g});b.hidden=true;});})();
+</script>
+</body>
+</html>
