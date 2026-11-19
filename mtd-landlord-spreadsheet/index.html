@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en-US"><head>
+<!-- Google Analytics 4 with Consent Mode v2 -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'],wait_for_update:500});
+gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});
+try{var c=localStorage.getItem('ff_consent');if(c){var g=c==='yes'?'granted':'denied';gtag('consent','update',{ad_storage:g,ad_user_data:g,ad_personalization:g,analytics_storage:g});}}catch(e){}
+gtag('js',new Date());gtag('config','G-Y093FX732P');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y093FX732P"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8544265950892925" crossorigin="anonymous"></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>MTD Landlord Spreadsheet: Making Tax Digital Template for Excel &amp; Google Sheets | RentalDealMath</title><meta name="description" content="Making Tax Digital spreadsheet for UK landlords. HMRC property categories, automatic cumulative quarterly totals, joint ownership shares and deadlines. Free sample.">
+<link rel="canonical" href="https://rentaldealmath.com/mtd-landlord-spreadsheet/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:site_name" content="RentalDealMath"><meta property="og:locale" content="en_GB">
+<meta property="og:title" content="MTD Landlord Spreadsheet: Making Tax Digital Template for Excel &amp; Google Sheets | RentalDealMath"><meta property="og:description" content="Making Tax Digital spreadsheet for UK landlords. HMRC property categories, automatic cumulative quarterly totals, joint ownership shares and deadlines. Free sample."><meta property="og:url" content="https://rentaldealmath.com/mtd-landlord-spreadsheet/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&amp;family=Figtree:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&amp;family=Figtree:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap"></noscript>
+<style>:root{--bg:#f4f5f2;--surface:#ffffff;--ink:#16201d;--muted:#5d6b66;--line:#dde2dd;--accent:#0d6b5c;--accent-soft:#e2f0ec;--display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Figtree","Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme: dark){:root{--bg:#0f1513;--surface:#17201d;--ink:#e6ece9;--muted:#97a6a0;--line:#2a3632;--accent:#4cc3a7;--accent-soft:#163029}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.55 var(--body)}
+a{color:var(--accent);text-underline-offset:.17em}
+.in{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+.site-header,.site-footer{background:var(--surface)}
+.site-header{border-bottom:1px solid var(--line)}
+.site-header .in{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-block:15px}
+.brand{display:inline-flex;align-items:center;gap:9px;font:600 1.2rem var(--display);color:var(--ink);text-decoration:none}
+.brand svg{width:32px;height:32px}.brand b{color:var(--accent)}
+.site-nav,.site-footer nav{display:flex;flex-wrap:wrap;gap:8px 16px}
+.site-nav a{color:var(--muted);font-size:.94rem;text-decoration:none;font-weight:600}
+.site-nav a:hover,.site-nav a[aria-current]{color:var(--accent);text-decoration:underline}
+h1,h2,h3{font-family:var(--display);line-height:1.2;margin:0}
+h1{font-size:clamp(2.25rem,5vw,3.7rem);letter-spacing:-.035em}
+h2{font-size:1.42rem}h3{font-size:1.16rem}
+p{margin:.65em 0 0}
+.intro{padding-block:clamp(26px,5vw,52px)}
+.intro>p:last-child{font-size:1.13rem;color:var(--muted)}
+.eyebrow{margin:0 0 8px;color:var(--accent);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.11em}
+.layout,.fields{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.layout{align-items:start}
+.layout>*,.fields>*,fieldset{min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(15px,3vw,28px);overflow-wrap:anywhere}
+.muted{color:var(--muted);font-size:.94rem}
+.fields{margin-top:18px;gap:13px}
+.field{display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
+label{font-weight:600;font-size:.93rem;line-height:1.3}
+input,select{min-width:0;width:100%;height:44px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:500 1rem var(--mono);padding:7px 9px}
+[aria-invalid="true"]{border-color:var(--accent);outline:1px dashed var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px}
+button{border:1px solid var(--accent);background:var(--accent);color:var(--surface);border-radius:8px;padding:10px 14px;min-height:44px;font:600 1rem var(--body);cursor:pointer}
+.secondary{color:var(--accent);background:var(--surface);border-color:var(--line)}
+.hero-result{background:var(--accent-soft);border-radius:10px;margin:14px 0;padding:14px}
+.hero-result strong{display:block;color:var(--accent);font:500 clamp(1.6rem,4.3vw,2.65rem)/1.2 var(--mono);margin-block:4px}
+.metrics{margin:0}
+.metrics>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;padding:8px 0;border-bottom:1px solid var(--line)}
+dd{margin:0;text-align:right;font:500 .92rem/1.55 var(--mono)}
+.verdict{margin-top:14px;background:var(--accent-soft);border-radius:8px;padding:10px 12px}
+.bar{display:flex;height:10px;border-radius:99px;overflow:hidden;background:var(--line);margin:16px 0 5px}
+.swatch{display:inline-block;width:.63em;height:.63em;margin-right:6px;border-radius:2px}
+.schedule,.guide{margin-block:18px}
+canvas{display:block;width:100%;height:210px;margin:10px 0 22px}
+details{border-bottom:1px solid var(--line);padding:6px 0}
+summary{cursor:pointer;padding:9px 3px;min-height:42px;font-weight:600}
+.year-total{color:var(--muted);font:500 .84rem var(--mono);margin-left:8px}
+table{width:100%;table-layout:fixed;border-collapse:collapse;font:500 .79rem/1.4 var(--mono)}
+caption{text-align:left;margin:6px 0;color:var(--muted)}
+th,td{text-align:right;border-bottom:1px solid var(--line);padding:6px 2px;overflow-wrap:anywhere}
+th:first-child{text-align:left}
+.guide{padding-bottom:28px}
+.guide p{max-width:75ch}
+.guide h2:not(:first-child){margin-top:24px}
+.guide h3{margin-top:17px}
+.ad-slot{display:none}
+.site-footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:.94rem}
+@media(max-width:760px){.layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:400px){.fields{grid-template-columns:minmax(0,1fr)}}
+
+.compare{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));margin:14px 0}
+.compare>div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px}
+.compare .win{background:var(--accent-soft);border-color:var(--accent)}
+.compare strong{display:block;font:500 clamp(1.25rem,3.5vw,1.8rem)/1.2 var(--mono);color:var(--accent);margin-top:4px}
+.small{font-size:.85rem;color:var(--muted)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.dl{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:1px solid var(--accent);background:var(--accent);color:var(--surface);border-radius:8px;padding:10px 16px;min-height:44px;font-weight:600}
+.dl.secondary{background:var(--surface);color:var(--accent);border-color:var(--line)}
+@media(max-width:520px){.compare{grid-template-columns:minmax(0,1fr)}}
+
+/* Mobile polish (Nov 2026) */
+@media (max-width:640px){
+  .site-nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:20px;white-space:nowrap;mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .site-nav::-webkit-scrollbar{display:none}
+  .site-nav a{display:inline-block;padding:10px 0}
+  input,select,textarea{font-size:16px!important}
+  button,select,input[type=submit],input[type=button],.btn,a.btn{min-height:44px}
+  input[type=checkbox],input[type=radio]{min-width:22px;min-height:22px}
+  table{max-width:100%}
+  img,canvas,video,svg{max-width:100%}
+  body{-webkit-text-size-adjust:100%;overflow-wrap:break-word}
+}
+</style><style>
+.result{background:var(--accent-soft);border-radius:12px;padding:16px;margin-top:16px}
+.result strong.big{display:block;font:700 clamp(1.5rem,4vw,2.3rem)/1.2 var(--display);color:var(--accent);margin:4px 0}
+.timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.timeline div{border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--surface)}
+.timeline b{display:block;color:var(--accent)}
+.buybox{border:2px solid var(--accent);border-radius:14px;padding:18px;background:var(--accent-soft)}
+.price{font:700 2.1rem var(--display);color:var(--accent)}
+.ticks{padding-left:1.1em}.ticks li{margin:.35em 0}
+[hidden]{display:none!important}
+.tablewrap td:first-child,.tablewrap th:first-child{text-align:left;font-family:var(--body)}
+@media(max-width:700px){.timeline{grid-template-columns:minmax(0,1fr)}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Product", "name": "MTD Landlord Spreadsheet", "description": "Excel and Google Sheets template for UK landlords: HMRC property categories, cumulative quarterly totals for Making Tax Digital, joint ownership shares and deadlines.", "brand": {"@type": "Brand", "name": "RentalDealMath"}, "url": "https://rentaldealmath.com/mtd-landlord-spreadsheet/", "offers": {"@type": "Offer", "price": 24, "priceCurrency": "GBP", "availability": "https://schema.org/InStock"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does this spreadsheet send my updates to HMRC?", "acceptedAnswer": {"@type": "Answer", "text": "No. HMRC requires updates to be sent from MTD-compatible software. Keep your records in this spreadsheet and use bridging software (or your accountant) to send the totals from the Quarterly updates tab."}}, {"@type": "Question", "name": "Which HMRC categories does it use?", "acceptedAnswer": {"@type": "Answer", "text": "The UK property categories in HMRC's quarterly update direction: total rent, other property income, lease premiums, reverse premiums, rent rates insurance and ground rents, repairs and maintenance, non-residential and residential finance costs, legal management and professional fees, cost of services, travel, and other allowable expenses."}}, {"@type": "Question", "name": "Can I use it for jointly owned property?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enter each property's full figures and your ownership share once. Every total is calculated on your share."}}, {"@type": "Question", "name": "Does it work in Google Sheets or on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It works in Excel for Windows and Mac, Google Sheets, Numbers and LibreOffice. It uses standard formulas only, with no macros."}}, {"@type": "Question", "name": "How many properties and transactions does it hold?", "acceptedAnswer": {"@type": "Answer", "text": "The full version holds 20 properties and 2,000 transaction rows per tax year. Start a fresh copy each tax year."}}, {"@type": "Question", "name": "What if the categories or rules change?", "acceptedAnswer": {"@type": "Answer", "text": "Buyers get updated versions free through their Gumroad library for as long as we publish the template."}}]}]}</script>
+<header class="site-header"><div class="in"><a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M7 15.5 16 8l9 7.5" fill="none" stroke="var(--surface)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 19h10M11 23.5h10" stroke="var(--surface)" stroke-width="2.4" stroke-linecap="round"/></svg><span>RentalDeal<b>Math</b></span></a><nav class="site-nav" aria-label="Main"><a href="/rental-property-calculator/">Rental Property</a><a href="/mortgage-calculator/">Mortgage</a><a href="/cap-rate-calculator/">Cap Rate</a><a href="/brrrr-calculator/">BRRRR</a><a href="/rental-vs-airbnb-calculator/">Airbnb vs Rent</a><a href="/rent-vs-buy-calculator/">Rent vs Buy</a><a href="/rent-ledger-template/">Rent Ledger</a><a href="/about/">About</a></nav></div></header>
+<main class="in">
+<div class="intro"><p class="eyebrow">For UK landlords · Excel &amp; Google Sheets</p><h1>MTD Landlord Spreadsheet</h1><p>Keep your rental records in a spreadsheet and get your Making Tax Digital quarterly totals worked out for you, in HMRC's UK property categories, with joint ownership handled.</p></div>
+<div class="layout">
+<section class="card"><h2>What it does</h2><ul class="ticks">
+<li>Pick the property and HMRC category from drop-downs for every payment in or out.</li>
+<li>Cumulative totals for each quarterly update, for standard (6 April) or calendar (1 April) periods.</li>
+<li>Applies your ownership share for jointly owned property automatically.</li>
+<li>Shows residential mortgage interest separately, the way HMRC treats it.</li>
+<li>Annual totals by property, a deadlines tab for your tax year and a guide to which category to use.</li>
+<li>Flags payments dated outside the tax year so nothing is missed or double counted.</li>
+<li>Holds 20 properties and 2,000 transactions. Standard formulas only, no macros.</li>
+</ul></section>
+<section class="card buybox"><h2>Get the spreadsheet</h2><p class="price" id="price">£24</p><p class="muted">One-time payment. Instant download. Free updates.</p>
+<div class="actions"><a class="dl" id="buy" href="#" hidden>Buy now</a><a class="dl secondary" href="RentalDealMath-MTD-Landlord-Spreadsheet-Free-Sample.xlsx" download id="sample">Download free sample</a></div>
+<p class="muted" id="soon" hidden>Checkout opens shortly. Try the free sample (2 properties, 30 rows) in the meantime.</p>
+<p class="muted">Not sure if MTD applies to you yet? <a href="/making-tax-digital-checker/">Check your start date</a>.</p></section>
+</div>
+<section class="card schedule"><h2>The Quarterly updates tab</h2><p class="muted">Example with two properties, one owned 50/50, standard update periods for 2026/27:</p>
+<div class="tablewrap"><table style="min-width:620px"><thead><tr><th>HMRC category</th><th>Update 1 (to 5 Jul)</th><th>Update 2 (to 5 Oct)</th></tr></thead><tbody>
+<tr><td>Total rent</td><td>£1,850.00</td><td>£1,850.00</td></tr>
+<tr><td>Rent, rates, insurance and ground rents</td><td>£310.00</td><td>£310.00</td></tr>
+<tr><td>Property repairs and maintenance</td><td>£240.00</td><td>£240.00</td></tr>
+<tr><td>Legal, management and other professional fees</td><td>£84.00</td><td>£84.00</td></tr>
+<tr><td>Travel expenses</td><td>-</td><td>£18.00</td></tr>
+<tr><td>Other allowable property expenses</td><td>-</td><td>£75.00</td></tr>
+<tr><td><b>Total expenses</b></td><td><b>£634.00</b></td><td><b>£727.00</b></td></tr>
+<tr><td>Residential property finance costs</td><td>£210.00</td><td>£210.00</td></tr>
+</tbody></table></div></section>
+<article class="card guide">
+<h2>How to use it with Making Tax Digital</h2>
+<p>From your start date, HMRC expects digital records and a quarterly update with totals for each category. Spreadsheets are allowed as long as they are linked to HMRC through bridging software. This template does the record keeping and the sums: you add each payment as it happens, and the Quarterly updates tab always shows the year-to-date figures in HMRC's categories. When a deadline comes round, your bridging software or accountant reads those totals and sends them.</p>
+<h2>Why landlords prefer a spreadsheet</h2>
+<p>Most landlords with one to ten properties have few transactions a month. Full accounting software can feel heavy for that, and many accountants are happy to receive a tidy spreadsheet. Keeping the records yourself also means you can see your rental profit per property at any time.</p>
+<h2>Frequently asked questions</h2><h3>Does this spreadsheet send my updates to HMRC?</h3><p>No. HMRC requires updates to be sent from MTD-compatible software. Keep your records in this spreadsheet and use bridging software (or your accountant) to send the totals from the Quarterly updates tab.</p><h3>Which HMRC categories does it use?</h3><p>The UK property categories in HMRC&#x27;s quarterly update direction: total rent, other property income, lease premiums, reverse premiums, rent rates insurance and ground rents, repairs and maintenance, non-residential and residential finance costs, legal management and professional fees, cost of services, travel, and other allowable expenses.</p><h3>Can I use it for jointly owned property?</h3><p>Yes. Enter each property&#x27;s full figures and your ownership share once. Every total is calculated on your share.</p><h3>Does it work in Google Sheets or on a Mac?</h3><p>Yes. It works in Excel for Windows and Mac, Google Sheets, Numbers and LibreOffice. It uses standard formulas only, with no macros.</p><h3>How many properties and transactions does it hold?</h3><p>The full version holds 20 properties and 2,000 transaction rows per tax year. Start a fresh copy each tax year.</p><h3>What if the categories or rules change?</h3><p>Buyers get updated versions free through their Gumroad library for as long as we publish the template.</p>
+<p class="muted">This template is not tax advice. Check GOV.UK or ask an accountant about your own position.</p></article>
+<script src="/assets/pay-config.js"></script><script>
+(function(){var P=window.RDM_PAY||{};var b=document.getElementById('buy');
+if(P.mtdPrice)document.getElementById('price').textContent=P.mtdPrice;
+if(P.mtd){b.href=P.mtd;b.hidden=false;b.target='_blank';b.rel='noopener';b.addEventListener('click',function(){try{gtag('event','begin_checkout',{item_name:'MTD Landlord Spreadsheet'});}catch(e){}});}
+else document.getElementById('soon').hidden=false;
+document.getElementById('sample').addEventListener('click',function(){try{gtag('event','sample_download',{item_name:'MTD Landlord Spreadsheet'});}catch(e){}});})();
+</script>
+</main>
+<footer class="site-footer"><div class="in"><nav aria-label="Footer"><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav><p>© 2026 RentalDealMath</p><p>For educational purposes only. Not financial advice.</p></div></footer>
+<div id="cc" role="dialog" aria-label="Cookie consent" hidden style="position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:560px;margin:0 auto;background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--line,#ddd);border-radius:12px;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.18);font:14px/1.5 system-ui,sans-serif">
+<p style="margin:0 0 10px">We use cookies to measure traffic and, later, to show ads. See our <a href="/privacy/">privacy policy</a>.</p>
+<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" data-c="no" style="padding:8px 14px;border-radius:8px;border:1px solid var(--line,#ccc);background:transparent;color:inherit;cursor:pointer">Reject</button><button type="button" data-c="yes" style="padding:8px 14px;border-radius:8px;border:0;background:var(--accent,#2457d6);color:#fff;cursor:pointer">Accept</button></div></div>
+<script>
+(function(){try{var tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';if(!/^(Europe\/|Atlantic\/(Reykjavik|Canary|Madeira|Faroe))/.test(tz)||localStorage.getItem('ff_consent'))return;}catch(e){return;}
+var b=document.getElementById('cc');b.hidden=false;b.addEventListener('click',function(e){var v=e.target.getAttribute&&e.target.getAttribute('data-c');if(!v)return;try{localStorage.setItem('ff_consent',v)}catch(x){}var g=v==='yes'?'granted':'denied';gtag('consent','update',{ad_storage:g,ad_user_data:g,ad_personalization:g,analytics_storage:g});b.hidden=true;});})();
+</script>
+</body></html>
